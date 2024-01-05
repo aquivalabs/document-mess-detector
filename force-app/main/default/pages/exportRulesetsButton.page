@@ -1,0 +1,7 @@
+<apex:page  standardController="Ruleset__c" 
+            extensions="ExportImportCtrl" 
+            recordSetVar="records" 
+            action="{!doExport}"
+            contentType="application/json#dmd-ruleset-export_{!TODAY()}.json" 
+            showHeader="false" 
+            sidebar="false">{!content}</apex:page>            

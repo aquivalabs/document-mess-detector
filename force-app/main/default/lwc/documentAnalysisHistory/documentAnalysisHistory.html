@@ -1,0 +1,15 @@
+<template>
+    <lightning-card if:true={documentId} title={title} class="slds-p-around_small">
+        <template if:true={data}>
+            <lightning-datatable
+                if:true={hasHistory}
+                class="slds-p-vertical_small"
+                key-field="id"
+                data={data}
+                columns={columns}
+                hide-checkbox-column
+            ></lightning-datatable>
+            <div if:false={hasHistory} class="slds-p-horizontal_medium">{noHistoryMessage}</div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,15 @@
+{
+  "orgName": "dmd_DEV",
+  "edition": "Developer",
+  "language": "en_US",
+  "features": ["EnableSetPasswordInApi"],
+  "namespace": "",
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    }
+  }
+}

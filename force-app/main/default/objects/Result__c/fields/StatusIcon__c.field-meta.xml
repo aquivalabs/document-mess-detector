@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StatusIcon__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Status__c,
+&quot;Fail&quot;, IMAGE(&quot;/resource/error&quot;, &quot;Fail&quot;),
+&quot;Success&quot;, IMAGE(&apos;/resource/success&apos;, &quot;Success&quot;),
+IMAGE(&quot;/resource/warning&quot;, &quot;Unsure&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status Indicator</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,27 @@
+{
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false,
+        "babelOptions": {
+            "parserOpts": {
+                "plugins": [
+                    "classProperties",
+                    [
+                        "decorators",
+                        {
+                            "decoratorsBeforeExport": false
+                        }
+                    ]
+                ]
+            }
+        }
+    },
+    "plugins": ["@lwc/eslint-plugin-lwc"],
+    "rules": {
+        "@lwc/lwc/no-deprecated": "error",
+        "@lwc/lwc/valid-api": "error",
+        "@lwc/lwc/no-document-query": "error",
+        "@lwc/lwc/no-leading-uppercase-api-name": "error",
+        "@lwc/lwc/no-inner-html": "error"
+    }
+}

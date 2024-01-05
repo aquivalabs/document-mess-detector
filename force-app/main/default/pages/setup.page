@@ -1,0 +1,40 @@
+<apex:page controller="SetupPageCtrl" title="Setup - DMD Document Mess Detector" docType="html-5.0" sidebar="false" lightningStylesheets="true">
+    <c:setup ctrl="{!controller}">
+
+        <c:setupStep title="Authorize API to extract text from Documents" step="{!setupExtractApi}">
+            <apex:pageBlock >
+                <apex:pageBlockSection columns="1">
+                    <apex:inputSecret label="API Key" value="{!setupExtractApi.settings.txt_ExtractApiKey__c}" size="60" required="true" redisplay="true"/>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </c:setupStep>
+
+        <c:setupStep title="Setup Open AI API as an AI Model" step="{!setupOpenAi}">
+            <apex:pageBlock >
+                <apex:pageBlockSection columns="1">
+                    <apex:pageBlockSectionItem>
+                        <apex:outputLabel for="apiKey"><a href="https://platform.openai.com/account/org-settings">API Key</a></apex:outputLabel>
+                        <apex:inputSecret id="apiKey" value="{!setupOpenAi.metadata.ApiKey__c}" size="60" required="true" redisplay="true"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem>
+                        <apex:outputLabel for="settings"><a href="https://platform.openai.com/account/rate-limits">Settings</a></apex:outputLabel>
+                        <apex:inputTextarea id="settings" value="{!setupOpenAi.metadata.Settings__c}" cols="60" rows="10" required="true"/>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </c:setupStep>
+
+        <c:setupStep title="Third-Party Licenses">
+            <div class="slds-setup-assistant__step-summary-content slds-media__body">
+                This software uses the following open-source software. Their licenses require us to reproduce their copyright notice.
+            </div>
+            <ul>
+                <li><a href="https://github.com/rsoesemann/app-setup/blob/master/LICENSE" target="_blank">rsoesemann/app-setup</a></li>
+                <li><a href="https://github.com/rsoesemann/apex-httpmock/blob/master/LICENSE" target="_blank">rsoesemann/apex-httpmock</a></li>
+                <li><a href="https://github.com/rsoesemann/apex-domainbuilder/blob/master/LICENSE" target="_blank">rsoesemann/apex-domainbuilder</a></li>
+                <li><a href="https://github.com/afawcett/apex-sobjectdataloader/blob/master/LICENSE"  target="_blank">afawcett/apex-sobjectdataloader</a></li>
+                <li><a href="https://github.com/apexfarm/ApexTriggerHandler/blob/master/LICENSE" target="_blank">apexfarm/ApexTriggerHandler</a></li>
+            </ul>
+        </c:setupStep>
+    </c:setup>
+</apex:page>

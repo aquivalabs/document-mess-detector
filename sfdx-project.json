@@ -1,0 +1,18 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true,
+      "definitionFile": "config/project-scratch-def.json",
+      "package": "DMD",
+      "versionName": "1.0",
+      "versionNumber": "1.0.0.NEXT"
+    }
+  ],
+  "name": "DMD",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "59.0",
+  "packageAliases": {
+  }
+}

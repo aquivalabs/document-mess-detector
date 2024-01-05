@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompletionApi__c</fullName>
+    <description>API used for Rule Generation</description>
+    <externalId>false</externalId>
+    <inlineHelpText>API used for Rule Generation</inlineHelpText>
+    <label>AI Used (for Generation)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>CompletionApi</valueSetName>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AiGenerateRules__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Use Gen AI to generate Rules for the given Name, Description and Context of this Ruleset</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Use Gen AI to generate Rules for the given Name, Description and Context of this Ruleset</inlineHelpText>
+    <label>AI-Generate Rules</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
