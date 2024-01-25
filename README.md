@@ -27,11 +27,14 @@ The App is also available as a [free app on the AppExchange](https://appexchange
 - Comfortable Setup UI for Post-Install Steps
 - Uses Custom Metadata Types to use other LLMs (was tested with Claude and Open Source Llama2)
 
-### How do I use it?
+### How do I use 
 
-Clone the repo, test it in a Scratch org using `scripts/create-scratch-org.sh` and then create your own Unlocked or Managed Package from it. All the steps, to configure and use the app can be found in the [User Guide (PDF)](user-guide.pdf).
+1. Clone the repo
+1. Spin up a scratch org using `scripts/create-scratch-org.sh`
+1. Create your own Unlocked or Managed Package from it. 
+1. All the steps, to configure and use the app can be found in the [User Guide (PDF)](user-guide.pdf).
 
-### How do I extend it?
+### How do I extend 
 
 1. Clone the repo
 1. Spin up a scratch org using `scripts/create-scratch-org.sh`
