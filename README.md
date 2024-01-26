@@ -2,6 +2,8 @@
 
 ... is a native Salesforce app that uses Generative AI to check whether business documents in Files and Attachments comply with a set of rules.
 
+Also available as a [free Managed Package on the Salesforce AppExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=8ae56cbd-8b6b-4009-bf17-1781d9416fe8).
+
 ### Highlight
 
 - Write Rules in simple Natural language and group them in Rulesets.
