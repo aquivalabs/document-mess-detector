@@ -53,7 +53,7 @@ public with sharing class AiGenerateRules implements Triggers.Handler, Triggers.
     }
 
 
-    // PRIVATE 
+    // PRIVATE
 
     private void execute(Ruleset__c ruleset, fflib_SObjectUnitOfWork uow) {
         Notification message = new Notification(ruleset.OwnerId).target(ruleset.Id).with(ruleset.Name);
