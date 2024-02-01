@@ -5,6 +5,16 @@
         <default>true</default>
         <label>Open AI API</label>
     </customValue>
+    <customValue>
+        <fullName>SalesforceEinstein</fullName>
+        <default>false</default>
+        <label>Salesforce Einstein</label>
+    </customValue>
+    <customValue>
+        <fullName>Llama2</fullName>
+        <default>false</default>
+        <label>Llama2 on AWS Sagemaker</label>
+    </customValue>
     <description>Label and Fully Qualified Name of the CompletionApi__mdt record</description>
     <masterLabel>Completion API</masterLabel>
     <sorted>false</sorted>

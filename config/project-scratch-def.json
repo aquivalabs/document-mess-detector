@@ -2,7 +2,7 @@
   "orgName": "dmd_DEV",
   "edition": "Developer",
   "language": "en_US",
-  "features": ["EnableSetPasswordInApi"],
+  "features": ["EnableSetPasswordInApi", "EinsteinGPTPlatform"],
   "namespace": "",
   "settings": {
     "lightningExperienceSettings": {

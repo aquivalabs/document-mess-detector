@@ -1,4 +1,4 @@
 #!/bin/bash
 DEV_HUB_ALIAS="DevHubAquiva"
-PACKAGE_NAME="DMD"
-SCRATCH_ORG_ALIAS="dmd_DEV"
+PACKAGE_NAME="document-mess-detector"
+SCRATCH_ORG_ALIAS="document-mess-detector_DEV"

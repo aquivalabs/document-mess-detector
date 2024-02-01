@@ -1,6 +1,6 @@
-// Note: API for outside classes to extend DMD must remain global
+// Note: API for outside classes to extend DMD must remain public
 @SuppressWarnings('PMD.AvoidGlobalModifier')
-global with sharing abstract class CompletionApi {
+public with sharing abstract class CompletionApi {
 
     private static final Set<String> IGNORED_MD_FIELDS = new Set<String>{ 'DeveloperName', 'Id', 'Label', 'Language', 'MasterLabel', 'NamespacePrefix', 'QualifiedApiName', 'DeveloperName' };
                     
@@ -10,12 +10,12 @@ global with sharing abstract class CompletionApi {
 
     // ABSTRACT
     
-    global abstract void receiveMetadata(CompletionApi__mdt metadata);
-    global abstract Results getCompletion(Document document, Ruleset ruleset);
+    public abstract void receiveMetadata(CompletionApi__mdt metadata);
+    public abstract Results getCompletion(Document document, Ruleset ruleset);
 
     // VIRTUAL 
     // To not break exisiting handlers just virtual (see https://salesforce.stackexchange.com/a/410879/256)
-    global virtual Rules generateRules(Ruleset ruleset) {
+    public virtual Rules generateRules(Ruleset ruleset) {
         throw new ApplicationException('generateRules() method not implemented by the current CompletionApi class.');
     }
     
@@ -95,36 +95,36 @@ global with sharing abstract class CompletionApi {
 
     // INNER
 
-    global class Document {
-        global String text;        
+    public class Document {
+        public String text;        
     }
 
-    global class Ruleset {
-        global String name;
-        global String description;
-        global String context;
-        global List<Rule> rules = new List<Rule>();
+    public class Ruleset {
+        public String name;
+        public String description;
+        public String context;
+        public List<Rule> rules = new List<Rule>();
     }
 
-    global class Rule {
-        global String ruleId;
-        global String name;
-        global String description;
-        global String content;
+    public class Rule {
+        public String ruleId;
+        public String name;
+        public String description;
+        public String content;
     }
 
-    global class Rules {
-        global List<Rule> rules = new List<Rule>();
+    public class Rules {
+        public List<Rule> rules = new List<Rule>();
     }
 
-    global class Results {
-        global List<Result> results = new List<Result>();
+    public class Results {
+        public List<Result> results = new List<Result>();
     }
 
-    global class Result {
-        global String ruleId;
-        global String status;
-        global String justification;
+    public class Result {
+        public String ruleId;
+        public String status;
+        public String justification;
     }
 
     public class DeployCallback implements Metadata.DeployCallback {
