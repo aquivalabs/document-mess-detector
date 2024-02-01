@@ -49,12 +49,14 @@ The App is also available as a [free app on the AppExchange](https://appexchange
 
 ---
 
-#### DISCLAIMER - Simple vs. sophisticated
-
-Despite this App being a free AppExchange app, which has passed Security Review it was never written with a long commercial career in mind. So we cut corners in a few places to keep the projects short and focused. So if you see some ugly parts here and there, let us know but be kind to us. This project is mainly about sharing results and excitement in "AI for Salesforce".
-
-We also made some adjustments, and simplifications to the original code to better fit
-the Open Source purpose. To have less loose metadata parts, we:
-
-- Skipped moving UI text to Custom Labels
-- Merged classes to have the most related code in one place
+> __DISCLAIMER - Simple vs. sophisticated__
+> 
+> Despite this App being a free AppExchange app, which has passed Security Review it > was never written with a long commercial career in mind. So we cut corners in a few > places to keep the projects short and focused. So if you see some ugly parts here 
+> and there, let us know but be kind to us. This project is mainly about sharing 
+> results and excitement in "AI for Salesforce".
+> 
+> We also made some adjustments, and simplifications to the original code to better 
+> fit the Open Source purpose. To have less loose metadata parts, we:
+> 
+> - Skipped moving UI text to Custom Labels
+> - Merged classes to have the most related code in one place
