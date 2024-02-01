@@ -1,6 +1,6 @@
 // Note: One days RegressionTest and Cron related test failed with ORA deadlocks
 @IsTest(isParallel=false)
-private with sharing class RegressionSuiteQueueTest {
+private with sharing class RegressionSuiteScheduler_Test {
 
     @IsTest
     private static void jobIsScheduledOnNewTest() {

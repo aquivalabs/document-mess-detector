@@ -1,6 +1,7 @@
 // Suppressed as PMD needs to be updates to check USER_MODE
 @SuppressWarnings('PMD.ApexCRUDViolation')
-public with sharing class DocumentAnalysisHistoryController {
+public with sharing class AnalysisHistoryCtrl {
+    
     @AuraEnabled(Cacheable=true)
     public static List<Analysis> history(Id documentId) {
         List<Analysis> result = new List<Analysis>();

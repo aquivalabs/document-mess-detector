@@ -1,5 +1,5 @@
 <apex:page  standardController="Ruleset__c" 
-            extensions="ExportImportCtrl" 
+            extensions="ExportImportRulesetCtrl" 
             action="{!doExport}"
             contentType="application/json#dmd-ruleset-export_{!TODAY()}.json" 
             showHeader="false" 

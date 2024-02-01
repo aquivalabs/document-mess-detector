@@ -1,6 +1,6 @@
 import { LightningElement, api, wire } from 'lwc';
 import { COLUMNS } from './config';
-import results from '@salesforce/apex/RegressionTestController.results';
+import results from '@salesforce/apex/RegressionTestCtrl.results';
 
 export default class RegressionResults extends LightningElement {
     @api recordId;

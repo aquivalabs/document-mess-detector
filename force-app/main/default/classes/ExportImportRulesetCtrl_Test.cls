@@ -1,5 +1,5 @@
 @IsTest
-private class ExportImportCtrl_Test {
+private class ExportImportRulesetCtrl_Test {
 
     @IsTest
     private static void exportSingleRuleset() {
@@ -14,7 +14,7 @@ private class ExportImportCtrl_Test {
 
          
         // Exercise
-        ExportImportCtrl ctrl = new ExportImportCtrl(new Set<Id>{ s.Id });
+        ExportImportRulesetCtrl ctrl = new ExportImportRulesetCtrl(new Set<Id>{ s.Id });
         ctrl.doExport();
 
 
@@ -35,12 +35,12 @@ private class ExportImportCtrl_Test {
                             .add( new Rule().name('Rule2') );
         s.persist();
 
-        ExportImportCtrl ctrl = new ExportImportCtrl(new Set<Id>{ s.Id });
+        ExportImportRulesetCtrl ctrl = new ExportImportRulesetCtrl(new Set<Id>{ s.Id });
         ctrl.doExport();
 
 
         // Exercise
-        ExportImportCtrl.doImport(ctrl.content);
+        ExportImportRulesetCtrl.doImport(ctrl.content);
 
         // Verify
         System.assertEquals(2, [SELECT Count() FROM Ruleset__c WHERE Name = 'Ruleset1']);
@@ -61,12 +61,12 @@ private class ExportImportCtrl_Test {
                             .add(shared);
         s.persist();
 
-        ExportImportCtrl ctrl = new ExportImportCtrl(new Set<Id>{ s.Id });
+        ExportImportRulesetCtrl ctrl = new ExportImportRulesetCtrl(new Set<Id>{ s.Id });
         ctrl.doExport();
 
 
         // Exercise
-        ExportImportCtrl.doImport(ctrl.content);
+        ExportImportRulesetCtrl.doImport(ctrl.content);
 
         // Verify
         System.assertEquals(2, [SELECT Count() FROM Ruleset__c WHERE Name = 'ToExport']);
@@ -85,12 +85,12 @@ private class ExportImportCtrl_Test {
         Ruleset s2 = new RuleSet().add(shared);
         shared.persist();
 
-        ExportImportCtrl ctrl = new ExportImportCtrl(new Set<Id>{ s1.Id, s2.Id });
+        ExportImportRulesetCtrl ctrl = new ExportImportRulesetCtrl(new Set<Id>{ s1.Id, s2.Id });
         ctrl.doExport();
 
 
         // Exercise
-        ExportImportCtrl.doImport(ctrl.content);
+        ExportImportRulesetCtrl.doImport(ctrl.content);
 
         // Verify
         System.assertEquals(4, [SELECT Count() FROM Ruleset__c]);

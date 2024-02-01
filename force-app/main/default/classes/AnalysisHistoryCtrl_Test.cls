@@ -1,5 +1,5 @@
 @IsTest
-private class DocumentAnalysisHistoryControllerTest {
+private class AnalysisHistoryCtrl_Test {
     
     private static final Integer ANALYSES_SIZE = 7;
     
@@ -25,7 +25,7 @@ private class DocumentAnalysisHistoryControllerTest {
         }
 
         // Exercise
-        List<DocumentAnalysisHistoryController.Analysis> result = DocumentAnalysisHistoryController.history(
+        List<AnalysisHistoryCtrl.Analysis> result = AnalysisHistoryCtrl.history(
             contentDocumentId
         );
 
@@ -42,7 +42,7 @@ private class DocumentAnalysisHistoryControllerTest {
         .ContentDocumentId;
 
         // Exercise
-        List<DocumentAnalysisHistoryController.Analysis> result = DocumentAnalysisHistoryController.history(
+        List<AnalysisHistoryCtrl.Analysis> result = AnalysisHistoryCtrl.history(
             contentDocumentId
         );
 

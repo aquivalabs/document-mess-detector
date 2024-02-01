@@ -1,4 +1,4 @@
-public with sharing class ExportImportCtrl {
+public with sharing class ExportImportRulesetCtrl {
 
     private Set<Id> recordIds = new Set<Id>();
 
@@ -7,15 +7,15 @@ public with sharing class ExportImportCtrl {
 
     // CONSTRUCTORS
 
-    public ExportImportCtrl(Set<Id> recordIds) {
+    public ExportImportRulesetCtrl(Set<Id> recordIds) {
         this.recordIds = recordIds;
     }
 
-    public ExportImportCtrl(ApexPages.StandardSetController ctrl) {
+    public ExportImportRulesetCtrl(ApexPages.StandardSetController ctrl) {
         this( new Map<Id, SObject>(ctrl.getSelected()).keySet() );
     }
 
-    public ExportImportCtrl(ApexPages.StandardController ctrl) {
+    public ExportImportRulesetCtrl(ApexPages.StandardController ctrl) {
         this( new Set<Id>{ ctrl.getId() } );
     }
 

@@ -1,5 +1,6 @@
 @IsTest
-private with sharing class RegressionTestControllerTest {
+private with sharing class RegressionTestCtrl_Test {
+    
     @IsTest
     private static void results() {
         // Setup
@@ -27,7 +28,7 @@ private with sharing class RegressionTestControllerTest {
 
         // Exercise
         Test.startTest();
-        List<RegressionTestController.RegressionResult> results = RegressionTestController.results(reggressionTestId);
+        List<RegressionTestCtrl.RegressionResult> results = RegressionTestCtrl.results(reggressionTestId);
         Test.stopTest();
 
         // Verify
@@ -51,7 +52,7 @@ private with sharing class RegressionTestControllerTest {
 
         // Exercise
         Test.startTest();
-        List<RegressionTestController.RegressionResult> results = RegressionTestController.results(reggressionTestId);
+        List<RegressionTestCtrl.RegressionResult> results = RegressionTestCtrl.results(reggressionTestId);
         Test.stopTest();
 
         // Verify

@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-import doImport from '@salesforce/apex/ExportImportCtrl.doImport';
+import doImport from '@salesforce/apex/ExportImportRulesetCtrl.doImport';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class ImportRulesets extends LightningElement {

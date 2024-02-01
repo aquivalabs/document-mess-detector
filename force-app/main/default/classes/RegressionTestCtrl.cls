@@ -1,6 +1,7 @@
 // Suppressed as PMD needs to be updates to check USER_MODE
 @SuppressWarnings('PMD.ApexCRUDViolation')
-public with sharing class RegressionTestController {
+public with sharing class RegressionTestCtrl {
+
     @AuraEnabled(cacheable=true)
     public static List<RegressionResult> results(Id regressionTestId) {
         try {

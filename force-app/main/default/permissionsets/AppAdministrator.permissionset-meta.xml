@@ -5,7 +5,7 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
-        <apexClass>DocumentAnalysisHistoryController</apexClass>
+        <apexClass>AnalysisHistoryCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -13,11 +13,11 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ExportImportCtrl</apexClass>
+        <apexClass>ExportImportRulesetCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>RegressionTestController</apexClass>
+        <apexClass>RegressionTestCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

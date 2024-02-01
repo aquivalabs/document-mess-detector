@@ -12,7 +12,7 @@ Also available as a [free Managed Package on the Salesforce AppExchange](https:/
 - Monitor the Accuracy of the AI using scheduled Regression Tests.
 - Native Salesforce App with Custom Objects for Rules, Rulesets, Analyses etc.
 - Uses Freemium Extractor API to extract text from documents (use your own API key)
-- Uses Open AI API for text reasoning (use your own API key)
+- Uses Open AI API for text reasoning (via Bring Your Own Key)
 - Export & Import of Rulesets
 - Comfortable Setup UI for Post-Install Steps
 - Uses Custom Metadata Types to use other LLMs (was tested with Claude and Open Source Llama2)
@@ -51,7 +51,7 @@ The App is also available as a [free app on the AppExchange](https://appexchange
 
 > __DISCLAIMER - Simple vs. sophisticated__
 > 
-> Despite this App being a free AppExchange app, which has passed Security Review it > was never written with a long commercial career in mind. So we cut corners in a few > places to keep the projects short and focused. So if you see some ugly parts here 
+> Despite this App being a free AppExchange app, which has passed Security Review it was never written with a long commercial career in mind. So we cut corners in a few > places to keep the projects short and focused. So if you see some ugly parts here 
 > and there, let us know but be kind to us. This project is mainly about sharing 
 > results and excitement in "AI for Salesforce".
 > 

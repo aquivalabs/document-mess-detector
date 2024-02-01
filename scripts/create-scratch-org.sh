@@ -5,13 +5,12 @@ execute() {
   $@ || exit
 }
 
-if [ -z "$DEV_HUB_URL" ]; then
-  echo "set default devhub user"
-  execute sf config set defaultdevhubusername=$DEV_HUB_ALIAS
 
-  echo "Deleting old scratch org"
-  sf org delete scratch --no-prompt --target-org $SCRATCH_ORG_ALIAS
-fi
+echo "set default devhub user"
+execute sf config set defaultdevhubusername=$DEV_HUB_ALIAS
+
+echo "Deleting old scratch org"
+sf org delete scratch --no-prompt --target-org $SCRATCH_ORG_ALIAS
 
 echo "Creating scratch org"
 execute sf org create scratch --alias $SCRATCH_ORG_ALIAS --set-default --definition-file ./config/project-scratch-def.json --duration-days 30

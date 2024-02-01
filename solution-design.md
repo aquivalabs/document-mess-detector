@@ -194,7 +194,7 @@ that uses Andy Fawcetts SObjectdataloader Open Source. It serializes multiple
 - Custom Objects/Tabs: `Rule__c`, `Ruleset__c`, `RuleInSet__c`
 - LWC: `importRulesets`
 - Visualforce: `exportRulesetButton.page`, `exportRulesetsButton.component`
-- Classes: `/afawcett/apex-sobjectdataloader/*`, `ExportImportCtrl(_Test).cls`
+- Classes: `/afawcett/apex-sobjectdataloader/*`, `ExportImportRulesetCtrl(_Test).cls`
 
 ##### 3.2.1.2. Security Remarks
 

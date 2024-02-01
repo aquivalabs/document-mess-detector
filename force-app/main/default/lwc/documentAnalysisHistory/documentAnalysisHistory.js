@@ -1,6 +1,6 @@
 import { LightningElement, api, wire } from 'lwc';
 import { COLUMNS } from './config';
-import history from '@salesforce/apex/DocumentAnalysisHistoryController.history';
+import history from '@salesforce/apex/AnalysisHistoryCtrl.history';
 
 export default class DocumentAnalysisHistory extends LightningElement {
     @api documentId;
