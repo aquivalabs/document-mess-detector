@@ -84,9 +84,12 @@ public with sharing abstract class CompletionApi {
     
     @TestVisible
     private static CompletionApi__mdt queryByName(String apiName) {
-        return (useMocks()) ? mocks[0] 
-                            : [SELECT MasterLabel, Label, QualifiedApiName, DeveloperName, ApiKey__c, HandlerClass__c, Settings__c
-                                FROM CompletionApi__mdt WHERE QualifiedApiName = :apiName WITH SYSTEM_MODE];
+        // Note: Prefer Qualified names but also accept namespace-less. See https://salesforce.stackexchange.com/questions/169815/disjunctions-not-supported
+        List<CompletionApi__mdt> result = [SELECT MasterLabel, Label, QualifiedApiName, DeveloperName, ApiKey__c, HandlerClass__c, Settings__c
+                                           FROM CompletionApi__mdt WHERE QualifiedApiName = :apiName WITH SYSTEM_MODE];
+        result.addAll([SELECT MasterLabel, Label, QualifiedApiName, DeveloperName, ApiKey__c, HandlerClass__c, Settings__c
+                        FROM CompletionApi__mdt WHERE DeveloperName = :apiName WITH SYSTEM_MODE]);                                  
+        return (useMocks()) ? mocks[0] : result[0];
     }
 
     private static Boolean useMocks() {

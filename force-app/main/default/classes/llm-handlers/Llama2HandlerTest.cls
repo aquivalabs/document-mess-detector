@@ -23,7 +23,7 @@ private class Llama2HandlerTest {
         HandlerClass__c,
         Settings__c
       FROM CompletionApi__mdt
-      WHERE QualifiedApiName = 'Llama2Api'
+      WHERE DeveloperName = 'Llama2'
     ];
 
     Test.setMock(HttpCalloutMock.class, new Llama2HttpMock());
