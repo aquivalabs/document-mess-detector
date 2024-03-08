@@ -2,7 +2,9 @@
 
 ... is a native Salesforce app that uses Generative AI to check whether business documents in Files and Attachments comply with a set of rules.
 
-Also available as a [free Managed Package on the Salesforce AppExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=8ae56cbd-8b6b-4009-bf17-1781d9416fe8).
+- [Install v1.1 as Unlocked Package (Production)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tVI0000002qk5YAA)
+
+- [Install v1.1 as Unlocked Package (Sandbox)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tVI0000002qk5YAA)
 
 ### Highlight
 
@@ -21,11 +23,13 @@ Also available as a [free Managed Package on the Salesforce AppExchange](https:/
 
 [![](http://img.youtube.com/vi/kGpFUgR-6Bg/hqdefault.jpg)](https://youtu.be/kGpFUgR-6Bg "")
 
-### Details
+### How it works
 
 DMD lends its name from [PMD the famous and widely used Static Code Analyser](https://pmd.github.io/). While PMD improves the quality of code by checking its compliance against rulesets that define antipatterns and smells, DMD checks the quality of business documents like contracts, specifications and written agreements.
 
 Understanding code for PMD is easy as code can understand code. Writing PMD rules was hard because humans had to learn how to write their rules in the language of the "machine".
+
+<img src="resources/pmd-vs-dmd.png" />
 
 DMD is very different and uses the latest breakthroughs in AI - Large Language Models (LLMs) like OpenAI's ChatGPT. LLMs with their capabilities to understand and reason natural language text are just perfect to rule description and prompts in natural language.
 
@@ -35,10 +39,11 @@ The App is also available as a [free app on the AppExchange](https://appexchange
 
 ### How do I use 
 
-1. Clone the repo
-1. Spin up a scratch org using `scripts/create-scratch-org.sh`
-1. Create your own Unlocked or Managed Package from it. 
-1. All the steps, to configure and use the app can be found in the [User Guide (PDF)](user-guide.pdf).
+ Please check the detailed [User Guide (PDF)](user-guide.pdf).
+
+### How it works 
+
+<img src="resources/how-it-works.png" />
 
 ### How do I extend 
 
