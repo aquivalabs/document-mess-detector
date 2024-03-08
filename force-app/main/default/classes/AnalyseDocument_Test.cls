@@ -11,23 +11,25 @@ private class AnalyseDocument_Test {
     private static void successResponse() {
 
         // Setup
-        Rule r = new Rule();
-        Ruleset rs = new Ruleset().add(r);
-        File_t f = new File_t();
-        Rule__c rule = (Rule__c) r.persist();
-        
-        new HttpMock()
-            .post('/api/v1/pdf-extractor', 'extracted Text')
-            .post('/v1/chat/completions', responseFor(rule))
-        .mock();
+        System.runAs(User_t.standard('DocumentReviewer')) {
+            Rule r = new Rule();
+            Ruleset rs = new Ruleset().add(r);
+            File_t f = new File_t();
+            Rule__c rule = (Rule__c) r.persist();
+            
+            new HttpMock()
+                .post('/api/v1/pdf-extractor', 'extracted Text')
+                .post('/v1/chat/completions', responseFor(rule))
+            .mock();
 
-        // Exercise
-        Test.startTest();
-        new Analysis(f, rs).persist();
-        Test.stopTest();
+            // Exercise
+            Test.startTest();
+            new Analysis(f, rs).persist();
+            Test.stopTest();
 
-        // Verify
-        System.assertEquals(1, [SELECT COUNT() FROM Result__c]);
+            // Verify
+            System.assertEquals(1, [SELECT COUNT() FROM Result__c]);
+        }
     }
 
     @IsTest

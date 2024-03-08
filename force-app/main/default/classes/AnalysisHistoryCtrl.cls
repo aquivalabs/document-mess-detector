@@ -2,7 +2,7 @@
 @SuppressWarnings('PMD.ApexCRUDViolation')
 public with sharing class AnalysisHistoryCtrl {
     
-    @AuraEnabled(Cacheable=true)
+    @AuraEnabled
     public static List<Analysis> history(Id documentId) {
         List<Analysis> result = new List<Analysis>();
         for (Analysis__c analysis : [
