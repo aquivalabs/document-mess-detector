@@ -2,17 +2,18 @@
   "packageDirectories": [
     {
       "path": "force-app",
+      "package": "document-mess-detector",
+      "versionName": "February '24",
+      "versionNumber": "1.0.0.NEXT",
       "default": true,
-      "definitionFile": "config/project-scratch-def.json",
-      "package": "DMD",
-      "versionName": "1.0",
-      "versionNumber": "1.0.0.NEXT"
+      "versionDescription": ""
     }
   ],
-  "name": "DMD",
-  "namespace": "",
+  "name": "document-mess-detector",
+  "namespace": "aquiva_os",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "59.0",
+  "sourceApiVersion": "60.0",
   "packageAliases": {
+    "document-mess-detector": "0HoVI00000028nt0AA"
   }
 }
