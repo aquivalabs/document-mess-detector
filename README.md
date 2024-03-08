@@ -2,9 +2,9 @@
 
 ... is a native Salesforce app that uses Generative AI to check whether business documents in Files and Attachments comply with a set of rules.
 
-- [Install v1.1 as Unlocked Package (Production)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tVI0000002qk5YAA)
+- [Install v1.1 as Unlocked Package (Production)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tVI0000002rZhYAI)
 
-- [Install v1.1 as Unlocked Package (Sandbox)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tVI0000002qk5YAA)
+- [Install v1.1 as Unlocked Package (Sandbox)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tVI0000002rZhYAI)
 
 ### Highlight
 

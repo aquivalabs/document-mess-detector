@@ -3,8 +3,8 @@
     {
       "path": "force-app",
       "package": "document-mess-detector",
-      "versionName": "February '24",
-      "versionNumber": "1.0.0.NEXT",
+      "versionName": "March '24",
+      "versionNumber": "1.1.0.NEXT",
       "default": true,
       "versionDescription": ""
     }
@@ -14,6 +14,8 @@
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "60.0",
   "packageAliases": {
-    "document-mess-detector": "0HoVI00000028nt0AA"
+    "document-mess-detector": "0HoVI0000002lFl0AI",
+    "document-mess-detector@1.0.0-1": "04tVI0000002rMnYAI",
+    "document-mess-detector@1.1.0-1": "04tVI0000002rZhYAI"
   }
 }

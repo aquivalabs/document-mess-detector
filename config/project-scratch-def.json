@@ -3,7 +3,6 @@
   "edition": "Developer",
   "language": "en_US",
   "features": ["EnableSetPasswordInApi", "EinsteinGPTPlatform"],
-  "namespace": "",
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
