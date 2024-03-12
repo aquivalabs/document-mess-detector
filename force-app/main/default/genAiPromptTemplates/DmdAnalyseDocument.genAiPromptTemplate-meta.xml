@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>2</activeVersion>
+    <description>DmdAnalyseDocument</description>
+    <developerName>DmdAnalyseDocument</developerName>
+    <masterLabel>DmdAnalyseDocument</masterLabel>
+    <templateVersions>
+        <content>YOUR TASK: Check whether a business document conforms to a set of rules. Document and rules will be provided as a JSON object of the following structure:
+{
+    &quot;document&quot; : &quot;plain text extracted from document&quot;,
+    &quot;rules&quot; : [
+        {
+            &quot;ruleId&quot; : &quot;unique rule identifier&quot;,
+            &quot;content&quot;: &quot;actual rule content&quot;
+        }
+    ]
+}
+
+YOUR RESPONSE: For each rule, you provide a result of type &quot;Fail&quot;, &quot;Success&quot;, &quot;Unsure&quot; including a justification why you decided that way.
+Do not include any explanations, only provide a RFC8259 compliant JSON object that follows this format without deviation:
+
+{
+    &quot;results&quot; : [
+        {
+        &quot;ruleId&quot; : &quot;Id of the rule being checked&quot;,
+        &quot;status&quot; : &quot;&apos;Success&apos; if the rule is obeyed, &apos;Fail&apos; if the rule is not obeyed, or &apos;Unsure&apos; if the status could not be determined.&quot;,
+        &quot;justification&quot; : &quot;Quotations from the document proving whether the rule is obeyed. Every sentence proving the rule should be included.&quot;
+        }
+    ]
+}
+
+
+{!$Apex:PromptBuilderTests.Prompt}
+</content>
+        <inputs>
+            <apiName>analysis</apiName>
+            <definition>SOBJECT://aquiva_os__Analysis__c</definition>
+            <masterLabel>Analysis</masterLabel>
+            <referenceName>Input:analysis</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>apex://PromptBuilderTests</definition>
+            <parameters>
+                <definition>SOBJECT://aquiva_os__Analysis__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>analysis</parameterName>
+                <valueExpression>{!$Input:analysis}</valueExpression>
+            </parameters>
+            <referenceName>Apex:PromptBuilderTests</referenceName>
+        </templateDataProviders>
+        <versionNumber>1</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>YOUR TASK: Check whether a business document conforms to a set of rules. Document and rules will be provided as a JSON object of the following structure:
+{
+    &quot;document&quot; : &quot;plain text extracted from document&quot;,
+    &quot;rules&quot; : [
+        {
+            &quot;ruleId&quot; : &quot;unique rule identifier&quot;,
+            &quot;content&quot;: &quot;actual rule content&quot;
+        }
+    ]
+}
+
+YOUR RESPONSE: For each rule, you provide a result of type &quot;Fail&quot;, &quot;Success&quot;, &quot;Unsure&quot; including a justification why you decided that way.
+Do not include any explanations, only provide a RFC8259 compliant JSON object that follows this format without deviation:
+
+{
+    &quot;results&quot; : [
+        {
+        &quot;ruleId&quot; : &quot;Id of the rule being checked&quot;,
+        &quot;status&quot; : &quot;&apos;Success&apos; if the rule is obeyed, &apos;Fail&apos; if the rule is not obeyed, or &apos;Unsure&apos; if the status could not be determined.&quot;,
+        &quot;justification&quot; : &quot;Quotations from the document proving whether the rule is obeyed. Every sentence proving the rule should be included.&quot;
+        }
+    ]
+}
+
+
+{!$Apex:PromptBuilderTests.Prompt}
+</content>
+        <inputs>
+            <apiName>analysis</apiName>
+            <definition>SOBJECT://aquiva_os__Analysis__c</definition>
+            <masterLabel>Analysis</masterLabel>
+            <referenceName>Input:analysis</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>apex://PromptBuilderTests</definition>
+            <parameters>
+                <definition>SOBJECT://aquiva_os__Analysis__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>analysis</parameterName>
+                <valueExpression>{!$Input:analysis}</valueExpression>
+            </parameters>
+            <referenceName>Apex:PromptBuilderTests</referenceName>
+        </templateDataProviders>
+        <versionNumber>2</versionNumber>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
