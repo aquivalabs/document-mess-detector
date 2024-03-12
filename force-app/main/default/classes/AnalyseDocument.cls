@@ -26,11 +26,8 @@ public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, 
         Analysis__c analysis = analyses.get(0);
 
         try {
-            CompletionApi.Document document = documentOf(analysis);
-            CompletionApi.Ruleset ruleset = rulesetOf(analysis);
-
             CompletionApi ai = CompletionApi.get(analysis.CompletionApi__c);
-            CompletionApi.Results results = ai.getCompletion(document, ruleset);
+            CompletionApi.Results results = ai.getCompletion(toGenericStructure(analysis));
             
             persist(analysis, results);
         } 
@@ -39,6 +36,14 @@ public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, 
         }
         
         enqueueNext();
+    }
+
+    public static CompletionApi.Analysis toGenericStructure(Analysis__c analysis) {
+        CompletionApi.Analysis result = new CompletionApi.Analysis();
+        result.id = analysis.Id;
+        result.document = documentOf(analysis);
+        result.ruleset = rulesetOf(analysis);
+        return result;
     }
 
     public static CompletionApi.Document documentOf(Analysis__c analysis) {
@@ -56,6 +61,7 @@ public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, 
                               WHERE Id = :analysis.Ruleset__c WITH USER_MODE];
         
         CompletionApi.Ruleset result = new CompletionApi.Ruleset();
+        result.id = ruleset.Id;
         result.context = ruleset.Context__c;                              
 
         for(Rule__c record : [SELECT Id, Content__c FROM Rule__c
