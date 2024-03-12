@@ -41,9 +41,7 @@ public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, 
         enqueueNext();
     }
 
-    // PRIVATE
-
-    private CompletionApi.Document documentOf(Analysis__c analysis) {
+    public static CompletionApi.Document documentOf(Analysis__c analysis) {
         CompletionApi.Document result = new CompletionApi.Document();
         
         ContentVersion file = [SELECT VersionData, PathOnClient, FileExtension, ContentSize FROM ContentVersion
@@ -53,7 +51,7 @@ public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, 
         return result;
     }
 
-    private CompletionApi.Ruleset rulesetOf(Analysis__c analysis) {
+    public static CompletionApi.Ruleset rulesetOf(Analysis__c analysis) {
         Ruleset__c ruleset = [SELECT Context__c FROM Ruleset__c 
                               WHERE Id = :analysis.Ruleset__c WITH USER_MODE];
         
@@ -73,6 +71,8 @@ public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, 
 
         return result;
     }
+
+    // PRIVATE
 
     private void persist(Analysis__c analysis, Exception error) {
         // Security False Positive: User permset disallows update therfore we need to behave as system user            

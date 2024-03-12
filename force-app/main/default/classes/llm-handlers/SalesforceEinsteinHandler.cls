@@ -24,7 +24,7 @@ public with sharing class SalesforceEinsteinHandler extends CompletionApi {
         request.additionalConfig = config;
 
         ConnectApi.EinsteinLLMGenerationItemOutput response = ConnectApi.EinsteinLLM.generateMessages(request).generations[0];
-        return (CompletionApi.Results) JSON.deserialize(response.text, CompletionApi.Results.class); */
+        return (CompletionApi.Results) JSON.deserialize(response.textt, CompletionApi.Results.class); */
         return null;
     }
     
@@ -42,21 +42,37 @@ public with sharing class SalesforceEinsteinHandler extends CompletionApi {
         return null;
     }
 
-
-    // PRIVATE 
-
-/*     private ConnectApi.EinsteinLlmAdditionalConfigInput defaultConfig() {
-        ConnectApi.EinsteinLlmAdditionalConfigInput result = new ConnectApi.EinsteinLlmAdditionalConfigInput();
-        result.applicationName = 'ISV-PILOT-DF23-CTS5978453120';
-        result.temperature = 1;
-        result.maxTokens = 1000;
-        result.model = settings.model;
-        return result;
-        return null;
-    } */
-
+    
+    @InvocableMethod(/*CapabilityType='FlexTemplate://DmdAnalyseDocument'*/) 
+    public static List<Response> populatePromptTemplate(List<Request> requests) {
+        List<Response> result = new List<Response>();
         
-    // INNER
+        CompletionApi.Document document = AnalyseDocument.documentOf( requests[0].analysis );
+        CompletionApi.Ruleset ruleset = AnalyseDocument.rulesetOf( requests[0].analysis );
+        
+        Prompt prompt = new Prompt();
+        prompt.document = document.text;
+        prompt.rules = ruleset.rules;
+
+        Response output = new Response();
+        output.prompt = JSON.serialize(prompt);
+        result.add(output);
+        
+        return result;
+    }
+
+
+    // INNER 
+
+    public class Request {
+        @InvocableVariable(required=true)
+        public Analysis__c analysis;
+    }
+
+    public class Response {
+        @InvocableVariable
+        public String prompt;
+    }
 
     public class CustomSettings {
         public String model;
