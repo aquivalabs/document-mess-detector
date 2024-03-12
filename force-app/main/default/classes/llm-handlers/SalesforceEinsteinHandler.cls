@@ -11,68 +11,40 @@ public with sharing class SalesforceEinsteinHandler extends CompletionApi {
         settings = new CustomSettings(metadata.Settings__c);
     }
     
-    public override CompletionApi.Results getCompletion(CompletionApi.Document document, CompletionApi.Ruleset ruleset) {
-        Prompt prompt = new Prompt();
-        prompt.document = document.text;
-        prompt.rules = ruleset.rules;
-      /* 
-        ConnectApi.EinsteinPromptTemplateGenerationsInput request = new ConnectApi.EinsteinPromptTemplateGenerationsInput();
-        request.promptTextorId = ruleset.context + '\n' + settings.context + '\n\n' + JSON.serialize(prompt);
+    public override CompletionApi.Results getCompletion(CompletionApi.Analysis analysis) {
+        ConnectApi.EinsteinPromptTemplateGenerationsInput input = new ConnectApi.EinsteinPromptTemplateGenerationsInput();
+        input.isPreview = false;
+        
+        ConnectApi.WrappedValue wrapped = new ConnectApi.WrappedValue();
+        wrapped.value = new Map<String, String>{ 'id' => analysis.id };
+        input.inputParams = new Map<String,ConnectApi.WrappedValue>{ 'Input:analysis' => wrapped };
+        
+        input.additionalConfig = new ConnectApi.EinsteinLlmAdditionalConfigInput();
+        input.additionalConfig.applicationName = 'DmdAnalyseDocument';
+        input.additionalConfig.temperature = 0.5;
 
-        ConnectApi.EinsteinLlmAdditionalConfigInput config = defaultConfig();
-        config.temperature = 0.4;
-        request.additionalConfig = config;
-
-        ConnectApi.EinsteinLLMGenerationItemOutput response = ConnectApi.EinsteinLLM.generateMessages(request).generations[0];
-        return (CompletionApi.Results) JSON.deserialize(response.textt, CompletionApi.Results.class); */
-        return null;
+        ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output = null; // TODO ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('DmdAnalyseDocument', input); 
+        return (CompletionApi.Results) JSON.deserialize(output.prompt, CompletionApi.Results.class);
     }
     
 
     public override CompletionApi.Rules generateRules(CompletionApi.Ruleset ruleset) {
-        /* ConnectApi.EinsteinLlmGenerationsInput request = new ConnectApi.EinsteinLlmGenerationsInput();
-        request.promptTextorId = settings.createRulesContext + '\n\n' + 'Name: ' + ruleset.name + '\nDescription: ' + ruleset.description + '\nContext: ' + ruleset.context;
+        ConnectApi.EinsteinPromptTemplateGenerationsInput input = new ConnectApi.EinsteinPromptTemplateGenerationsInput();
+        input.isPreview = false;
+        
+        ConnectApi.WrappedValue wrapped = new ConnectApi.WrappedValue();
+        wrapped.value = new Map<String, String>{ 'id' => ruleset.id };
+        input.inputParams = new Map<String,ConnectApi.WrappedValue>{ 'Input:ruleset' => wrapped };
+        
+        input.additionalConfig = new ConnectApi.EinsteinLlmAdditionalConfigInput();
+        input.additionalConfig.applicationName = 'DmdGenerateRuleset';
+        input.additionalConfig.temperature = 1;
 
-        ConnectApi.EinsteinLlmAdditionalConfigInput config = defaultConfig();
-        config.temperature = 1;
-        request.additionalConfig = config;
-
-        ConnectApi.EinsteinLLMGenerationItemOutput response = ConnectApi.EinsteinLLM.generateMessages(request).generations[0];
-        return (CompletionApi.Rules) JSON.deserialize(response.text, CompletionApi.Rules.class); */
-        return null;
+        ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output = null; // TODO ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('DmdGenerateRuleset', input); 
+        return (CompletionApi.Rules) JSON.deserialize(output.prompt, CompletionApi.Rules.class);
     }
-
-    
-    @InvocableMethod(/*CapabilityType='FlexTemplate://DmdAnalyseDocument'*/) 
-    public static List<Response> populatePromptTemplate(List<Request> requests) {
-        List<Response> result = new List<Response>();
-        
-        CompletionApi.Document document = AnalyseDocument.documentOf( requests[0].analysis );
-        CompletionApi.Ruleset ruleset = AnalyseDocument.rulesetOf( requests[0].analysis );
-        
-        Prompt prompt = new Prompt();
-        prompt.document = document.text;
-        prompt.rules = ruleset.rules;
-
-        Response output = new Response();
-        output.prompt = JSON.serialize(prompt);
-        result.add(output);
-        
-        return result;
-    }
-
 
     // INNER 
-
-    public class Request {
-        @InvocableVariable(required=true)
-        public Analysis__c analysis;
-    }
-
-    public class Response {
-        @InvocableVariable
-        public String prompt;
-    }
 
     public class CustomSettings {
         public String model;
