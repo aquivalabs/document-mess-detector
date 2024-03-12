@@ -19,12 +19,11 @@ public with sharing class Llama2Handler extends CompletionApi {
   }
 
   public override CompletionApi.Results getCompletion(
-    CompletionApi.Document document,
-    CompletionApi.Ruleset ruleset
+    CompletionApi.Analysis analysis
   ) {
     List<Input> inputs = new List<Input>{
-      new Input('system', systemMessage(ruleset)),
-      new Input('user', userMessage(document, ruleset))
+      new Input('system', systemMessage(analysis.ruleset)),
+      new Input('user', userMessage(analysis.document, analysis.ruleset))
     };
     apiRequest.inputs.add(inputs);
 

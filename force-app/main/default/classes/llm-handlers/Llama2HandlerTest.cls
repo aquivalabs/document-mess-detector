@@ -2,6 +2,8 @@
 private class Llama2HandlerTest {
   @IsTest
   static void getCompletion() {
+
+
     CompletionApi.Document doc = new CompletionApi.Document();
     doc.text = 'any';
 
@@ -12,6 +14,10 @@ private class Llama2HandlerTest {
     CompletionApi.Ruleset ruleset = new CompletionApi.Ruleset();
     ruleset.context = 'any';
     ruleset.rules = new List<CompletionApi.Rule>{ rule };
+
+    CompletionApi.Analysis analysis = new CompletionApi.Analysis();
+    analysis.document = doc;
+    analysis.ruleset = ruleset;
 
     CompletionApi__mdt llamaConfig = [
       SELECT
@@ -31,7 +37,7 @@ private class Llama2HandlerTest {
     handler.receiveMetadata(llamaConfig);
 
     Test.startTest();
-    CompletionApi.Results results = handler.getCompletion(doc, ruleset);
+    CompletionApi.Results results = handler.getCompletion(analysis);
     Test.stopTest();
 
     Assert.isNotNull(results);

@@ -11,7 +11,7 @@ public with sharing abstract class CompletionApi {
     // ABSTRACT
     
     public abstract void receiveMetadata(CompletionApi__mdt metadata);
-    public abstract Results getCompletion(Document document, Ruleset ruleset);
+    public abstract Results getCompletion(Analysis analysis);
 
     // VIRTUAL 
     // To not break exisiting handlers just virtual (see https://salesforce.stackexchange.com/a/410879/256)
@@ -98,11 +98,18 @@ public with sharing abstract class CompletionApi {
 
     // INNER
 
+    public class Analysis {
+        public String id;        
+        public Document document;
+        public Ruleset ruleset;
+    }
+
     public class Document {
         public String text;        
     }
 
     public class Ruleset {
+        public String id;
         public String name;
         public String description;
         public String context;
@@ -128,6 +135,11 @@ public with sharing abstract class CompletionApi {
         public String ruleId;
         public String status;
         public String justification;
+    }
+
+    public class Prompt {
+        public String document;
+        public List<CompletionApi.Rule> rules;
     }
 
     public class DeployCallback implements Metadata.DeployCallback {

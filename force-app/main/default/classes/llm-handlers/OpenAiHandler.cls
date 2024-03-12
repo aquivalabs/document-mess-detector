@@ -13,14 +13,14 @@ public with sharing class OpenAiHandler extends CompletionApi {
         settings = new CustomSettings(metadata.Settings__c);
     }
     
-    public override CompletionApi.Results getCompletion(CompletionApi.Document document, CompletionApi.Ruleset ruleset) {
-        Prompt prompt = new Prompt();
-        prompt.document = document.text;
-        prompt.rules = ruleset.rules;
+    public override CompletionApi.Results getCompletion(CompletionApi.Analysis analysis) {
+        CompletionApi.Prompt prompt = new CompletionApi.Prompt();
+        prompt.document = analysis.document.text;
+        prompt.rules = analysis.ruleset.rules;
 
         Request request = new Request();
         request.model = settings.model;
-        request.systemMessage(ruleset.context + '\n' + settings.context);
+        request.systemMessage(analysis.ruleset.context + '\n' + settings.context);
         request.userMessage(JSON.serialize(prompt));
       
         Response response = complete(request);
@@ -145,11 +145,6 @@ public with sharing class OpenAiHandler extends CompletionApi {
         private String finish_reason;
         private Integer index;
         private Message message;
-    }
-
-    public class Prompt {
-        public String document;
-        public List<CompletionApi.Rule> rules;
     }
 
     public class ResponseFormat {
