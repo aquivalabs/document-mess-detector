@@ -25,4 +25,4 @@ echo "Make sure Org user is english"
 sf data update record --sobject User --where "Name='User User'" --values "Languagelocalekey=en_US"
 
 echo "Running Apex Tests"
-execute sf apex run test --test-level RunLocalTests --wait 30 --code-coverage --result-format human
+execute sf apex run test --test-level RunLocalTests --code-coverage --result-format human --synchronous
