@@ -3,8 +3,8 @@
     {
       "path": "force-app",
       "package": "document-mess-detector",
-      "versionName": "March '24",
-      "versionNumber": "1.2.0.NEXT",
+      "versionName": "April '24",
+      "versionNumber": "1.3.0.NEXT",
       "default": true,
       "versionDescription": ""
     }
@@ -17,6 +17,7 @@
     "document-mess-detector": "0HoVI0000002lFl0AI",
     "document-mess-detector@1.0.0-1": "04tVI0000002rMnYAI",
     "document-mess-detector@1.1.0-1": "04tVI0000002rZhYAI",
-    "document-mess-detector@1.2.0-1": "04tVI0000002tLNYAY"
+    "document-mess-detector@1.2.0-1": "04tVI0000002tLNYAY",
+    "document-mess-detector@1.3.0-1": "04tVI0000003x6nYAA"
   }
 }
