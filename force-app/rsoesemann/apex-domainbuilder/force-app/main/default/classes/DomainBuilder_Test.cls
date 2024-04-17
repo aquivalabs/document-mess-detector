@@ -1,28 +1,6 @@
 // PMD - False positive: Warnings in this open source will not be taken into account
 @IsTest
 public class DomainBuilder_Test {
-    @IsTest
-    private static void noUnneededRecords() {
-        // Setup & Exercise
-        Contact_t con = new Contact_t(); // 1x insert
-        Opportunity_t opp = new Opportunity_t(); // 1x insert
-
-        new Account_t() // 1x insert
-            .add(new Contact_t()) // 1x insert
-            .add(con) // 0x insert
-            .add(
-                opp // 0x insert
-                    .add(con)
-            ) // 1x insert OpportunityContactRole
-            .persist();
-
-        // Verify
-        System.assertEquals(5, Limits.getDmlRows());
-        System.assertEquals(1, [SELECT COUNT() FROM Account]);
-        System.assertEquals(2, [SELECT COUNT() FROM Contact]);
-        System.assertEquals(1, [SELECT COUNT() FROM Opportunity]);
-        System.assertEquals(1, [SELECT COUNT() FROM OpportunityContactRole]);
-    }
 
     @IsTest
     private static void happyPath() {
@@ -177,5 +155,28 @@ public class DomainBuilder_Test {
             Account.SObjectType
         };
         System.assertEquals(expectedOrder, graph.sortTopologically());
+    }
+    
+    @IsTest
+    private static void noUnneededRecords() {
+        // Setup & Exercise
+        Contact_t con = new Contact_t(); // 1x insert
+        Opportunity_t opp = new Opportunity_t(); // 1x insert
+
+        new Account_t() // 1x insert
+            .add(new Contact_t()) // 1x insert
+            .add(con) // 0x insert
+            .add(
+                opp // 0x insert
+                    .add(con)
+            ) // 1x insert OpportunityContactRole
+            .persist();
+
+        // Verify
+        System.assertEquals(5, Limits.getDmlRows());
+        System.assertEquals(1, [SELECT COUNT() FROM Account]);
+        System.assertEquals(2, [SELECT COUNT() FROM Contact]);
+        System.assertEquals(1, [SELECT COUNT() FROM Opportunity]);
+        System.assertEquals(1, [SELECT COUNT() FROM OpportunityContactRole]);
     }
 }

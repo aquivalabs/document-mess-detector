@@ -1,5 +1,7 @@
 public class RuleInSet extends DomainBuilder {
 
+	// CONSTRUCTORS
+
 	public RuleInSet(Ruleset s, Rule r) {
 		super(RuleInSet__c.SObjectType);
 		setParent(RuleInSet__c.Ruleset__c, s);

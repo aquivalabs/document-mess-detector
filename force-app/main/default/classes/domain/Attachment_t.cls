@@ -1,5 +1,7 @@
 public with sharing class Attachment_t extends DomainBuilder {
 
+	// CONSTRUCTORS
+
     public Attachment_t() {
 		super(Attachment.SObjectType);
 
@@ -13,6 +15,8 @@ public with sharing class Attachment_t extends DomainBuilder {
 
 		setParent(Attachment.ParentId, parent);
 	}
+
+	// PROPERTIES
 
 	public Attachment_t name(String value) {
 		return (Attachment_t) set(Attachment.Name, value);

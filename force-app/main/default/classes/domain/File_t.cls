@@ -1,5 +1,7 @@
 public with sharing class File_t extends DomainBuilder {
 
+	// CONSTRUCTORS
+
     public File_t() {
 		super(ContentVersion.SObjectType);
 
@@ -7,6 +9,8 @@ public with sharing class File_t extends DomainBuilder {
         path('/document.pdf');
         body('content');
 	}
+
+	// PROPERTIES
 
 	public File_t name(String value) {
 		return (File_t) set(ContentVersion.Title, value);

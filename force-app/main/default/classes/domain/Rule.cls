@@ -1,5 +1,7 @@
 public with sharing class Rule extends DomainBuilder {
 
+	// CONSTRUCTORS
+
     public Rule() {
 		super(Rule__c.SObjectType);
 
@@ -12,6 +14,8 @@ public with sharing class Rule extends DomainBuilder {
 		this();
         new RuleInSet(s, this);
     }
+
+	// PROPERTIES
 
 	public Rule name(String value) {
 		return (Rule) set(Rule__c.Name, value);

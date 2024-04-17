@@ -3,6 +3,8 @@
 public class User_t extends DomainBuilder {
     private static final Id STANDARD_USER = [SELECT Id FROM Profile WHERE Name = 'Standard User'].Id;
 
+	// CONSTRUCTORS
+
     public User_t() {
         super(User.SObjectType);
 

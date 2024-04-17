@@ -1,5 +1,7 @@
 public class RegressionTest extends DomainBuilder {
 
+	// CONSTRUCTORS
+
 	public RegressionTest(Analysis a) {
 		super(RegressionTest__c.SObjectType);
 

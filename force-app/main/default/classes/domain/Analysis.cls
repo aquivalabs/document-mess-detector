@@ -2,6 +2,8 @@
 @SuppressWarnings('PMD.AvoidHardcodingId')
 public class Analysis extends DomainBuilder {
 
+	// CONSTRUCTORS
+
 	public Analysis(File_t f, Ruleset r) {
 		super(Analysis__c.SObjectType);
 
