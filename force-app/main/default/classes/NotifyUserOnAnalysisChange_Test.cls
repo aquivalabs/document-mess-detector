@@ -6,8 +6,7 @@ private class NotifyUserOnAnalysisChange_Test {
     private static void onSuccess() {
 
         // Setup
-        Rule r = new Rule();
-        Ruleset s = new Ruleset().add(r);
+        Ruleset s = new Ruleset().add( new Rule() );
 
         Analysis__c a = (Analysis__c) new Analysis(s)
                                             .persist();
