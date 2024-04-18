@@ -376,87 +376,61 @@ The App brings a broad range of Custom Objects for Application data. It doesn't 
 It also comes with a Protected Custom Setting and a Public Custom Metadata Type with Protected Packaged records.
 
 ```plantuml
-    @startuml
-    !theme plain
+   @startuml
+!theme plain
 
-    object SObject #lightblue {
-        Any Salesforce Object
-    }
-
-    object "File|Attachment" as file #lightblue {
+    object "File | Attachment" as file #DDDDDD {
         Binary with extractable text
     }
 
     package "DMD Managed Package" #AntiqueWhite {
-        object Analysis__c  {
-            **OWD:** Private
-            ---
-            CompletionApi
-            Document
-            Ruleset
-            Status
-            FailReason
+        package "Check documents" <<Rectangle>> {
+            object Analysis__c #ADD1B2 {
+                Document
+                Ruleset
+                Status
+                FailReason
+            }
+            object Result__c #ADD1B2 {
+                Rule
+                Status
+                Justification
+            }
         }
-        object Result__c {
-            **OWD:** Inherited
-            ---
-            Rule
-            Status
-            Justification
+
+        package "Author Rules" <<Rectangle>> {
+            object Rule__c #A9DCDF {
+                Name
+                Description
+                Content
+            }
+            object RuleInSet__c #A9DCDF {
+                Rule
+                Ruleset
+            }
+            object Ruleset__c #A9DCDF {
+                Name
+                Description
+                Context
+            }
         }
-        object Rule__c {
-            **OWD:** PublicRead
-            ---
-            Name
-            Description
-            Content
-        }
-        object RuleInSet__c {
-            **OWD:** Inherited
-            ---
-            Rule
-            Ruleset
-        }
-        object Ruleset__c {
-            **OWD:** PublicRead
-            ---
-            Name
-            Description
-            Context
-        }
-        object RegressionTest__c  {
-            **OWD:** PublicRead
-            ---
+        object RegressionTest__c #EB937F {
             Benchmark Analysis
             Cron Expression
         }
-        object CompletionApi__mdt  #lightgray {
-            One Protected record per supported API
-            ---
-            ApiSecret
-            Handler Class
-            Settings in arbitrary form (JSON, YAML)
-        }
-        object DmdSetting__c #lightgray {
-            Protected Custom Setting for 
-            app-global configuration
-            ---
-            ExtractApiKey
-        }
     }
 
-    Result__c }o--|| Analysis__c
-    Result__c }o--|| Rule__c
-    Ruleset__c ||--o{ Analysis__c
-    Analysis__c }o--o| SObject
-    Analysis__c }o--o| file
-    Rule__c ||--o{ RuleInSet__c
-    Ruleset__c ||--o{ RuleInSet__c
-    RegressionTest__c }o--|| Analysis__c
-    Analysis__c }o--o| RegressionTest__c
+    Rule__c "0..*" -left- "1..*" Ruleset__c
+    (Rule__c, Ruleset__c) . RuleInSet__c
+    Ruleset__c o-left- Analysis__c
+    Analysis__c *-- Result__c
+    Analysis__c -right-o file
+    Result__c --o Rule__c
 
-    Analysis__c ... CompletionApi__mdt
-    @enduml
+    RegressionTest__c --o Analysis__c : Benchmark
+    RegressionTest__c o-- Analysis__c
+
+@enduml
 ```
 
 ### 4.1. Custom Settings : `DmdSettings__c`
