@@ -1,4 +1,3 @@
-@IsTest
 @SuppressWarnings('PMD.AvoidHardcodingId')
 public class Analysis extends DomainBuilder {
 
