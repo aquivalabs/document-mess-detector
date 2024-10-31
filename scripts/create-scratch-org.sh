@@ -22,7 +22,7 @@ echo "Pushing changes to scratch org"
 execute sf project deploy start
 
 echo "Assigning permissions"
-execute sf force user permset assign --perm-set-name AppAdministrator --perm-set-name DocumentReviewer --perm-set-name RuleAuthor
+execute sf org assign permset --name AppAdministrator --name DocumentReviewer --name RuleAuthor --name EinsteinGPTPromptTemplateManager
 
 echo "Running Apex Tests"
 execute sf apex run test --test-level RunLocalTests --code-coverage --result-format human --synchronous

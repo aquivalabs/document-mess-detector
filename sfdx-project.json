@@ -12,7 +12,7 @@
   "name": "document-mess-detector",
   "namespace": "aquiva_os",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "60.0",
+  "sourceApiVersion": "62.0",
   "packageAliases": {
     "document-mess-detector": "0HoVI0000002lFl0AI",
     "document-mess-detector@1.0.0-1": "04tVI0000002rMnYAI",

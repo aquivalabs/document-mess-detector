@@ -1,14 +1,18 @@
 {
   "orgName": "dmd_DEV",
-  "edition": "Developer",
+  "edition": "Partner Developer",
+  "hasSampleData": true,
   "language": "en_US",
-  "features": ["EnableSetPasswordInApi", "EinsteinGPTPlatform"],
+  "features": ["EnableSetPasswordInApi","Einstein1AIPlatform"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
     "mobileSettings": {
       "enableS1EncryptedStoragePref2": false
+    },
+    "EinsteinGptSettings" : {
+      "enableEinsteinGptPlatform" : true 
     }
   }
 }
