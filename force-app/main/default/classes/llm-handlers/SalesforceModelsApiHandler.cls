@@ -42,8 +42,8 @@ public with sharing class SalesforceModelsApiHandler extends CompletionApi {
                             .user('Name: ' + ruleset.name + '\nDescription: ' + ruleset.description + '\nContext: ' + ruleset.context)
                             .send();
         }
-        catch(Exception error) {
-            throw new ApplicationException('Error while calling OpenAI via Salesforce Trust Layer', error);
+        catch(aiplatform.ModelsAPI.createGenerations_ResponseException error) {
+            throw new ApplicationException('Error while calling OpenAI via Salesforce Trust Layer: ' + error.responseCode + ' - ' + error);
         }
 
         return (CompletionApi.Rules) JSON.deserialize(response.Code200.generationDetails.generations[0].content, CompletionApi.Rules.class);
@@ -63,12 +63,12 @@ public with sharing class SalesforceModelsApiHandler extends CompletionApi {
         }
 
         private Request system(String content) {
-            request.body.messages.add(message(content, 'system'));
+            request.body.messages.add(message('system', content));
             return this;
         }
 
         private Request user(String content) {
-            request.body.messages.add(message(content, 'user'));    
+            request.body.messages.add(message('user', content));    
             return this;
         }
 
