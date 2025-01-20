@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Salesforce Models API</label>
+    <protected>false</protected>
+    <values>
+        <field>ApiKey__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>HandlerClass__c</field>
+        <value xsi:type="xsd:string">SalesforceModelsApiHandler</value>
+    </values>
+    <values>
+        <field>Settings__c</field>
+        <value xsi:type="xsd:string">{
+ "model":"sfdc_ai__DefaultOpenAIGPT4OmniMini",
+ "context":"Your task is to check if a given business document conforms to a set of rules. \nDocument and rules will be provided in JSON of the following structure:\n\n{'document':'document plaintext','rules':[{'ruleId':'unique rule identifier','content':'the actual rule content'}]}\n\nYou will provide your results as a JSON object in the following format: { 'results': [{\n'ruleId' : 'Id of the current Rule',\n'status' : 'One of 3 values: 'Success', 'Unsure', 'Fail' depending wether the rule is fullfiled or not. Use 'Unsure' only in seldom cases.',\n'justification': 'Justify your decision with very specific samples from the doc. It must be ovious you didn't make this up\nEven quote from the doc or give page # to prove your point.'\n},...]}",
+ "createRulesContext":"You are tasked to create a list of rules that will be later given to a Generative AI to check the quality of a specific document. As input, you get the Name, Description, and Context of the Ruleset containing those rules. You will provide results as a JSON object of the following format: { 'rules' : [ { 'name': 'A Label to recognize the rule among others. Short but precise and give context. E.g. Combine Document Type and Rule core like 'Contract > Has a signature'. 80 chars max.', 'description': 'Just used for Rule Management. A longer 255 chars description of the rule. Should explain the why and explain instead of just repeating the name.', 'content': 'The actual rule specification that will be passed to a Generative AI to check a given document text. As short as possible but can have 1000s of chars.' }, ...]}"
+        }</value>
+    </values>
+</CustomMetadata>

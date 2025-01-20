@@ -6,9 +6,9 @@
         <label>Open AI API</label>
     </customValue>
     <customValue>
-        <fullName>SalesforceEinstein</fullName>
+        <fullName>SalesforceModelsApi</fullName>
         <default>false</default>
-        <label>Salesforce Einstein</label>
+        <label>Salesforce Models API</label>
     </customValue>
     <customValue>
         <fullName>Llama2</fullName>
