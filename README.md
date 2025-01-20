@@ -2,9 +2,9 @@
 
 ... is a native Salesforce app that uses Generative AI to check whether business documents in Files and Attachments comply with a set of rules.
 
-- [Install v1.4 as Unlocked Package (Production)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tVI0000003xA1YAI)
+- [Install v1.5 as Unlocked Package (Production)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tVI000000GHsvYAG)
 
-- [Install v1.4 as Unlocked Package (Sandbox)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tVI0000003xA1YAI)
+- [Install v1.5 as Unlocked Package (Sandbox)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tVI000000GHsvYAG)
 
 ### Highlight
 
@@ -14,10 +14,11 @@
 - Monitor the Accuracy of the AI using scheduled Regression Tests.
 - Native Salesforce App with Custom Objects for Rules, Rulesets, Analyses etc.
 - Uses Freemium Extractor API to extract text from documents (use your own API key)
-- Uses Open AI API for text reasoning (via Bring Your Own Key)
+- Uses Salesforce [Models API](https://developer.salesforce.com/docs/einstein/genai/guide/access-models-api-with-apex.html) as default LLM
+- Can use your own Open AI API for text reasoning (via Bring Your Own Key)
 - Export & Import of Rulesets
 - Comfortable Setup UI for Post-Install Steps
-- Uses Custom Metadata Types to use other LLMs (was tested with Claude and Open Source Llama2)
+- Uses Custom Metadata Types to use other LLMs (was tested with OpenAi, Claude and Open Source Llama2)
 
 ### Demo Video
 

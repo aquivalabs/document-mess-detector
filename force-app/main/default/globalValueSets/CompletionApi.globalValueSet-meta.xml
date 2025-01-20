@@ -2,12 +2,12 @@
 <GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customValue>
         <fullName>SalesforceModelsApi</fullName>
-        <default>false</default>
+        <default>true</default>
         <label>Salesforce Models API</label>
     </customValue>
     <customValue>
         <fullName>OpenAiApi</fullName>
-        <default>true</default>
+        <default>false</default>
         <label>Open AI API</label>
     </customValue>
     <customValue>

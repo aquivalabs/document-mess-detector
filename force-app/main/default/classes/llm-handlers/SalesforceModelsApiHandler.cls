@@ -29,7 +29,8 @@ public with sharing class SalesforceModelsApiHandler extends CompletionApi {
             throw new ApplicationException('Error while calling OpenAI via Salesforce Trust Layer', error);
         }
 
-        return (CompletionApi.Results) JSON.deserialize(response.Code200.generationDetails.generations[0].content, CompletionApi.Results.class);
+        // Note: For yet undocumented reasons the result JSON has pre and postfixes we need to remove
+        return (CompletionApi.Results) JSON.deserialize(response.Code200.generationDetails.generations[0].content.removeStart('```json').removeEnd('```'), CompletionApi.Results.class);
     }
     
 
