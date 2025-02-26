@@ -1,5 +1,3 @@
-// Note: API for outside classes to extend DMD must remain public
-@SuppressWarnings('PMD.AvoidGlobalModifier')
 public with sharing abstract class CompletionApi {
 
     private static final Set<String> IGNORED_MD_FIELDS = new Set<String>{ 'DeveloperName', 'Id', 'Label', 'Language', 'MasterLabel', 'NamespacePrefix', 'QualifiedApiName', 'DeveloperName' };

@@ -1,4 +1,4 @@
-public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, Queueable, Database.AllowsCallouts {
+public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, Queueable {
 
     private List<Analysis__c> analyses;
 
@@ -26,8 +26,7 @@ public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, 
         Analysis__c analysis = analyses.get(0);
 
         try {
-            CompletionApi ai = CompletionApi.get(analysis.CompletionApi__c);
-            CompletionApi.Results results = ai.getCompletion(toGenericStructure(analysis));
+            CompletionApi.Results results = executePromptTemplate(toGenericStructure(analysis));
             
             persist(analysis, results);
         } 
@@ -79,6 +78,28 @@ public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, 
     }
 
     // PRIVATE
+
+
+    private CompletionApi.Results executePromptTemplate(CompletionApi.Analysis analysis) {
+        ConnectApi.WrappedValue document = new ConnectApi.WrappedValue();
+        document.value = analysis.document.text;
+
+        ConnectApi.WrappedValue rules = new ConnectApi.WrappedValue();
+        rules.value = JSON.serialize(analysis.ruleset.rules);
+
+        ConnectApi.EinsteinPromptTemplateGenerationsInput input = new ConnectApi.EinsteinPromptTemplateGenerationsInput();
+        input.additionalConfig = new ConnectApi.EinsteinLlmAdditionalConfigInput();
+        input.additionalConfig.applicationName = 'PromptBuilderPreview';
+        input.isPreview = false;
+        input.inputParams = new Map<String, ConnectApi.WrappedValue>{
+            'Input:documentText'=> document,
+            'Input:rules' => rules
+        };
+
+        ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output 
+            = ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('AnalyseDocument',input);
+        return (CompletionApi.Results) JSON.deserialize(output.generations[0].text, CompletionApi.Results.class);
+    }
 
     private void persist(Analysis__c analysis, Exception error) {
         // Security False Positive: User permset disallows update therfore we need to behave as system user            

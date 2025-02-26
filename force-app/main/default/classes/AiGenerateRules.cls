@@ -1,4 +1,4 @@
-public with sharing class AiGenerateRules implements Triggers.Handler, Triggers.AfterInsert, Triggers.AfterUpdate, Queueable, Database.AllowsCallouts {
+public with sharing class AiGenerateRules implements Triggers.Handler, Triggers.AfterInsert, Triggers.AfterUpdate, Queueable {
 
     private List<Ruleset__c> rulesets;
 
@@ -55,12 +55,12 @@ public with sharing class AiGenerateRules implements Triggers.Handler, Triggers.
 
     // PRIVATE
 
+    // Executes the rule generation process for a given ruleset.
     private void execute(Ruleset__c ruleset, fflib_SObjectUnitOfWork uow) {
         Notification message = new Notification(ruleset.OwnerId).target(ruleset.Id).with(ruleset.Name);
 
         try {
-            CompletionApi ai = CompletionApi.get(ruleset.CompletionApi__c);
-            CompletionApi.Rules response = ai.generateRules( toObject(ruleset) );
+            CompletionApi.Rules response = executePromptTemplate(ruleset);
 
             for(CompletionApi.Rule generated : response.rules) {
                 Rule__c rule = new Rule__c(Name = generated.name, Description__c= generated.description, Content__c = generated.content);
@@ -83,6 +83,25 @@ public with sharing class AiGenerateRules implements Triggers.Handler, Triggers.
         }
     }
 
+    private CompletionApi.Rules executePromptTemplate(Ruleset__c record) {
+        ConnectApi.WrappedValue value = new ConnectApi.WrappedValue();
+        value.value = new Map<String, String>{ 'id' => record.Id };
+        
+        Map<String, ConnectApi.WrappedValue> params = new Map<String, ConnectApi.WrappedValue>();
+        params.put('Input:ruleset', value);
+
+        ConnectApi.EinsteinPromptTemplateGenerationsInput input = new ConnectApi.EinsteinPromptTemplateGenerationsInput();
+        input.additionalConfig = new ConnectApi.EinsteinLlmAdditionalConfigInput();
+        input.additionalConfig.applicationName = 'PromptBuilderPreview';
+        input.isPreview = false;
+        input.inputParams = params;
+
+        ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output 
+            = ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('GenerateRules',input);
+        return(CompletionApi.Rules) JSON.deserialize(output.generations[0].text, CompletionApi.Rules.class);
+    }
+
+    // Converts a Ruleset__c record into a CompletionApi.Ruleset object.
     private CompletionApi.Ruleset toObject(Ruleset__c record) {
         CompletionApi.Ruleset result = new CompletionApi.Ruleset();
         result.name = record.Name;    

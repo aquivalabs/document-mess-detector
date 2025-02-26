@@ -3,16 +3,21 @@
     {
       "path": "force-app",
       "package": "document-mess-detector",
-      "versionName": "January '25",
-      "versionNumber": "1.5.0.NEXT",
+      "versionName": "March '25",
+      "versionNumber": "1.6.0.NEXT",
       "default": true,
-      "versionDescription": ""
+      "versionDescription": "",
+      "packageMetadataAccess": {
+        "permissionSets": [
+          "EinsteinGPTPromptTemplateManager"
+        ]
+      }
     }
   ],
   "name": "document-mess-detector",
   "namespace": "aquiva_os",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "62.0",
+  "sourceApiVersion": "63.0",
   "packageAliases": {
     "document-mess-detector": "0HoVI0000002lFl0AI",
     "document-mess-detector@1.0.0-1": "04tVI0000002rMnYAI",
