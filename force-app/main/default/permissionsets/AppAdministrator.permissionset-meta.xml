@@ -28,10 +28,6 @@
         <apexClass>SetupPageCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    <customMetadataTypeAccesses>
-        <enabled>true</enabled>
-        <name>CompletionApi__mdt</name>
-    </customMetadataTypeAccesses>
     <fieldPermissions>
         <editable>false</editable>
         <field>Analysis__c.BenchmarkGroup__c</field>
@@ -120,11 +116,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Result__c.StatusIcon__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Ruleset__c.CompletionApi__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

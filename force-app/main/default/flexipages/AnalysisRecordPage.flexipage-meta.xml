@@ -228,16 +228,6 @@
                 <identifier>RecordSalesforceRecordLink_cField2</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.CompletionApi__c</fieldItem>
-                <identifier>Recorddmd_ai_CompletionApi_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-0ae6080c-beb8-4a1b-8f4f-dd367f20bba7</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -304,16 +294,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.SalesforceRecordLink__c</fieldItem>
                 <identifier>RecordSalesforceRecordLink_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.CompletionApi__c</fieldItem>
-                <identifier>Recorddmd_ai_CompletionApi_cField2</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

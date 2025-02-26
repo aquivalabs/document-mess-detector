@@ -8,7 +8,6 @@ public class Ruleset extends DomainBuilder {
         name('Language Rules');
         description('A Ruleset for nicer language');
         context('You are a respected book author, known for your elgant and cultivated language.');
-		set(Ruleset__c.CompletionApi__c, 'OpenAiApi');
 	}
 
 	// PROPERTIES

@@ -152,34 +152,4 @@ public class TestDataFactory {
         );
     }
 
-    public static OpenAiHandler.Response openAIResponse(List<Rule__c> rules) {
-        CompletionApi.Results results = new CompletionApi.Results();
-        for (Rule__c rule : rules) {
-            CompletionApi.Result result = new CompletionApi.Result();
-            result.ruleId = rule.Id;
-            result.status = 'Success';
-            result.justification = 'Justification';
-            results.results.add(result);
-        }
-
-        String encodedResults = JSON.serialize(JSON.serialize(results));
-
-        String response = OPEN_API_RESPONSE.replace('{{0}}', encodedResults);
-        return (OpenAiHandler.Response) JSON.deserialize(response, OpenAiHandler.Response.class);
-    }
-
-    public static OpenAiHandler.Response openAIResponse(String response) {
-        return (OpenAiHandler.Response) JSON.deserialize(
-            OPEN_API_RESPONSE.replace('{{0}}', response),
-            OpenAiHandler.Response.class
-        );
-    }
-
-    public static OpenAiHandler.Response openAIResponse() {
-        return openAIResponse('"Hello AI!"');
-    }
-
-    public static OpenAiHandler.Response openAIResponseNoMessage() {
-        return (OpenAiHandler.Response) JSON.deserialize(OPEN_API_RESPONSE_NO_MESSAGE, OpenAiHandler.Response.class);
-    }
 }

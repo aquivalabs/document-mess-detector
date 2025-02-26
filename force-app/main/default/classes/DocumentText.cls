@@ -49,11 +49,11 @@ public with sharing class DocumentText {
             
             result = new Http().send(request);
             if(result.getStatusCode() != 200) {
-                throw new CompletionApi.ApplicationException('Error: ' + result.toString());
+                throw new ApplicationException('Error: ' + result.toString());
             }
         } 
         catch(Exception error) {
-            throw new CompletionApi.ApplicationException('Error extracting text from document: ', error);
+            throw new ApplicationException('Error extracting text from document: ', error);
         }
 
         return result.getBody();
@@ -66,7 +66,7 @@ public with sharing class DocumentText {
         DmdSettings__c result = DmdSettings__c.getOrgDefaults();
         
         if(result == null || result.txt_ExtractApiKey__c == null ) {
-            throw new CompletionApi.ApplicationException('No Extract API Key found in Settings.');
+            throw new ApplicationException('No Extract API Key found in Settings.');
         }
 
         return result.txt_ExtractApiKey__c;
@@ -74,7 +74,7 @@ public with sharing class DocumentText {
 
     private void failWhenInsufficientHeapFor(ContentVersion document) {
         if(document.ContentSize > availableHeap()) {
-            throw new CompletionApi.ApplicationException('Insufficient heap to extract text from document');
+            throw new ApplicationException('Insufficient heap to extract text from document');
         }
     }
 

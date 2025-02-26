@@ -116,11 +116,6 @@
             <field>RegressionTest__c</field>
             <table>Analysis__c</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CompletionApi__c</field>
-            <table>Analysis__c</table>
-        </columns>
         <masterLabel>Analyses</masterLabel>
     </sections>
     <sections>

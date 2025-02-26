@@ -35,10 +35,6 @@
                 <behavior>Readonly</behavior>
                 <field>SalesforceRecordLink__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>CompletionApi__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

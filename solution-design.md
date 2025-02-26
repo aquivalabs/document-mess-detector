@@ -15,7 +15,6 @@
         - [3.3.1. Check a Document](#331-check-a-document)
 - [4. Data Model](#4-data-model)
     - [4.1. Custom Settings : `DmdSettings__c`](#41-custom-settings-dmdsettings__c)
-    - [4.2. Custom Metadata : `CompletionApi__mdt`](#42-custom-metadata-completionapi__mdt)
 
 <!-- /TOC -->
 
@@ -126,27 +125,21 @@ Post install the Admin needs to configure the app from Apps Setup tab.
     actor AppAdmin
     participant SetupTab
     database DmdSettings__c
-    database CompletionApi__mdt
 
     == Extract API Step ==
     AppAdmin --> SetupTab : Provide Extract API credentials
     SetupTab --> DmdSettings__c : Store Protected
-    == Open AI Step ==
-    AppAdmin --> SetupTab : Provide OpenAi Key and Settings
-    AppAdmin --> CompletionApi__mdt : Store Protected
     @enduml
 ```
 
-1. One Setup Step asks for Extract API credentials which on Save are securely stored in a Protected Custom Setting called `DmdSettings__c`. This is used to callout to an external API to extract text from PDF documents in Salesforce.
-
-2. A second Setup Step prepares the app for the useage with an Open AI API account to securely interact with GPT. All settings on this page are securely stored in a Protected Custom Metadata record of type `CompletionApi__mdt`. This is a CMDT record because it contains predefined values and there might be multiple instances of this in the future as we want to support multiple AI Providers.
+One Setup Step asks for Extract API credentials which on Save are securely stored in a Protected Custom Setting called `DmdSettings__c`. This is used to callout to an external API to extract text from PDF documents in Salesforce.
 
 ##### 3.1.1.1. Relevant Packaged Components
 
-- Custom Objects: `DmdSettings__c`, `CompletionApi__mdt`
+- Custom Objects: `DmdSettings__c`
 - Tab: `Setup__c.tab-meta.xml`
 - Visualforce: `setup.page`, `setupStep.component`
-- Classes: `setup/app-setup/*`, `SetupPageCtrl.cls`, `SetupExtractApi(_Test).cls`, `SetupOpenAi(_Test).cls`, `CompletionApi.cls`, `OpenAiHandler.cls`
+- Classes: `setup/app-setup/*`, `SetupPageCtrl.cls`, `SetupExtractApi(_Test).cls`
 
 ##### 3.1.1.2. Security Remarks
 
@@ -318,8 +311,6 @@ The main use case of the application is running document scan against selected f
     participant "Selector LWC" as lwc
     database "Analysis__c/Result__c" as analysis
     participant "AnalyseDocument.cls" as code
-    database CompletionApi__mdt
-    participant "CompletionApi.cls" as plugin
     boundary ExtractAPI
     boundary "e.g. OpenAi API" as api
 
@@ -338,11 +329,6 @@ The main use case of the application is running document scan against selected f
     code --> ExtractAPI : extractTextFrom(document)
     code <-- ExtractAPI : plainText
 
-    == Instantiate and delegate to Completion API ==
-    code --> CompletionApi__mdt : fetch CMDT
-    code --> plugin : Instantiate handler class  
-    code --> plugin : enqueue getCompletion() 
-    plugin --> api  : delegate 
 
     == Create Result records ==
     code <-- plugin : getCompletion()
@@ -353,9 +339,9 @@ The main use case of the application is running document scan against selected f
 ##### 3.3.1.1. Relevant Packaged Components
 
 - Custom Objects/Tabs: `Analysis__c`, `Result__c`
-- Settings/Metadata: `DmdSettings__c`, `CompletionApi__mdt`
+- Settings: `DmdSettings__c`
 - LWC: `documentSelector`, `documentAnalysisHistory`
-- Classes: `AnalyseDocument(_Test).cls`, `NotifyUserOnAnalysisChange(_Test).cls`, `CompletionApi.cls`, `ExtractApi(_Test).cls`, `OpenAiHandler.cls` 
+- Classes: `AnalyseDocument(_Test).cls`, `NotifyUserOnAnalysisChange(_Test).cls`, `ExtractApi(_Test).cls`
 
 ##### 3.3.1.2. Security Remarks
 
@@ -437,20 +423,3 @@ It also comes with a Protected Custom Setting and a Public Custom Metadata Type 
 
 For safely storing global Application settings the app comes with a Protected Custom Setting. 
 Currently we only store API credentials for the Extract API there. This is managed by the custom Setup page.
-
-### 4.2. Custom Metadata : `CompletionApi__mdt`
-
-The current version of the app support the Open AI API for reasoning and inference. 
-To make this extensible in the future we decided to create a Custom Metadata Type for each
-supported Provider. Providers which the app nativly supports bring a Protected record of that CMDT
-in the package. Custom Setup steps allow to modify values of such record as needed.
-
-For Subscribers to also plugin their own Providers outside of the package the CMDT type is Public
-with SubscriberEditable fields.
-
-As different APIs can have very different settings and configuration needs the CMDT is very generic.
-It only has 3 fields:
-
-- an explicit API Key field
-- a Large Text Field to store arbitrary Settings (as JSON, YAML or other formats)
-- a Text field for an Apex Name of a Class which is able to handle this Provider type. 

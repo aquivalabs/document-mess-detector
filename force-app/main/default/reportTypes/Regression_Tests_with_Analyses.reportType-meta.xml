@@ -202,11 +202,6 @@
             <field>Ruleset__c.Name</field>
             <table>RegressionTest__c.Analyses__r</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CompletionApi__c</field>
-            <table>RegressionTest__c.Analyses__r</table>
-        </columns>
         <masterLabel>Analyses</masterLabel>
     </sections>
     <sections>

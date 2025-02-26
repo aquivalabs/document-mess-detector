@@ -110,11 +110,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Ruleset__c.CompletionApi__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Ruleset__c.Context__c</field>
         <readable>true</readable>
     </fieldPermissions>

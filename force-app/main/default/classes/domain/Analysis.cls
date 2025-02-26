@@ -12,7 +12,6 @@ public class Analysis extends DomainBuilder {
 								  : [SELECT ContentDocumentId FROM ContentVersion WHERE Id = :f.Id].ContentDocumentId;
 		set(Analysis__c.DocumentId__c, docId);
 		set(Analysis__c.SalesforceRecordId__c, '000000000000000AAA');
-		set(Analysis__c.CompletionApi__c, 'OpenAiApi');
 	}
 
 	public Analysis(Ruleset r) {
