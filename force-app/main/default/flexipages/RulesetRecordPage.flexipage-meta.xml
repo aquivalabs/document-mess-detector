@@ -101,6 +101,48 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.AiGenerateRules__c</fieldItem>
+                <identifier>Recorddmd_ai_AiGenerateRules_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-5cb95b1d-e1f5-41c0-b9d7-215398381b37</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <name>Facet-726b23fa-e1f8-46d8-b60b-6ede6fbcd964</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-5cb95b1d-e1f5-41c0-b9d7-215398381b37</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-726b23fa-e1f8-46d8-b60b-6ede6fbcd964</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column5</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-8e74c4bd-6ce1-456a-b40a-b455f0f48618</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.CreatedById</fieldItem>
@@ -180,6 +222,10 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-8e74c4bd-6ce1-456a-b40a-b455f0f48618</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>horizontalAlignment</name>
                     <value>true</value>
                 </componentInstanceProperties>
@@ -238,6 +284,10 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Tabs</value>
+                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>maintabs</value>
