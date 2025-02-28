@@ -1,4 +1,4 @@
-public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, Queueable {
+public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, Queueable, Database.AllowsCallouts {
 
     private List<Analysis__c> analyses;
 
