@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>NriaRCuMzY3qrJSIhVSOrHXNO1TawRqqrnxwCt0jpCw=_1</activeVersionIdentifier>
+    <developerName>GenerateRules</developerName>
+    <masterLabel>Generate. Rules</masterLabel>
+    <templateVersions>
+        <content>You are tasked to create a list of rules that will later be given to a Generative AI to check the quality of a specific document.
+
+ You will receive the Name, Description, and Context of the &lt;RULESET&gt; that contains these rules.
+ You must provide your results as a JSON object in the following format:
+
+{
+ &quot;rules&quot;: [
+  {
+   &quot;name&quot;: &quot;A Label to recognize the rule among others. Short but precise and gives context. E.g., combine Document Type and Rule core like &apos;Contract &gt; Has a signature&apos;. 80 chars max.&quot;,
+   &quot;description&quot;: &quot;Just used for Rule Management. A longer 255 chars description of the rule. Should explain the why and not just repeat the name.&quot;,
+   &quot;content&quot;: &quot;The actual rule specification that will be passed to a Generative AI to check a given document text. As short as possible but can have 1000s of chars.&quot;
+  }
+  // Additional rule objects go here
+ ]
+}
+
+&lt;RULESET&gt;
+{!$RecordSnapshot:ruleset.Snapshot}
+&lt;/RULESET&gt;
+</content>
+        <inputs>
+            <apiName>ruleset</apiName>
+            <definition>SOBJECT://aquiva_os__Ruleset__c</definition>
+            <masterLabel>ruleset</masterLabel>
+            <referenceName>Input:ruleset</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getDataForGrounding</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>recordId</parameterName>
+                <valueExpression>{!$Input:ruleset.Id}</valueExpression>
+            </parameters>
+            <referenceName>RecordSnapshot:ruleset</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>NriaRCuMzY3qrJSIhVSOrHXNO1TawRqqrnxwCt0jpCw=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
