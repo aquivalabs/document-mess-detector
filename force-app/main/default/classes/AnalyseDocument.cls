@@ -2,6 +2,8 @@ public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, 
 
     private List<Analysis__c> analyses;
 
+    @TestVisible private static CompletionApi.Results mockedResults;
+
     // TRIGGER
 
     // Note: Default constructor required for Trigger Framework
@@ -96,14 +98,14 @@ public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, 
             'Input:rules' => rules
         };
 
-        ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output 
-            = ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('AnalyseDocument',input);
-        return (CompletionApi.Results) JSON.deserialize(output.generations[0].text, CompletionApi.Results.class);
+        ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output = ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('AnalyseDocument',input);
+        CompletionApi.Results result = (CompletionApi.Results) JSON.deserialize(output.generations[0].text, CompletionApi.Results.class);
+        return (Test.isRunningTest() & mockedResults != null) ? mockedResults : result;
     }
 
     private void persist(Analysis__c analysis, Exception error) {
-        // Security False Positive: User permset disallows update therfore we need to behave as system user            
-        update as system new Analysis__c(Id =analysis.Id, 
+        // Security False Positive: User permset disallows update therefore we need to behave as system user            
+        update as system new Analysis__c(Id = analysis.Id, 
                                          Status__c = Constants.ANALYSIS_ERROR,
                                          FailReason__c = format(error));
     }

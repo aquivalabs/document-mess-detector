@@ -2,6 +2,9 @@ public with sharing class AiGenerateRules implements Triggers.Handler, Triggers.
 
     private List<Ruleset__c> rulesets;
 
+    @TestVisible
+    private static CompletionApi.Rules mockedRules;
+
     // CONSTRUCTORS
 
     // Note: Default constructor required for Trigger Framework
@@ -96,9 +99,9 @@ public with sharing class AiGenerateRules implements Triggers.Handler, Triggers.
         input.isPreview = false;
         input.inputParams = params;
 
-        ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output 
-            = ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('GenerateRules',input);
-        return(CompletionApi.Rules) JSON.deserialize(output.generations[0].text, CompletionApi.Rules.class);
+        ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output = ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('GenerateRules',input);
+        CompletionApi.Rules rules = (CompletionApi.Rules) JSON.deserialize(output.generations[0].text, CompletionApi.Rules.class);
+        return (Test.isRunningTest() && mockedRules != null) ? mockedRules : rules;
     }
 
     // Converts a Ruleset__c record into a CompletionApi.Ruleset object.
