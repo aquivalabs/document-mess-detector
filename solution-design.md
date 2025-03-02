@@ -26,10 +26,10 @@
 
 DMD which stands for Document Mess Detector lends its name from PMD, the famous Open Source Static Code Analyser, which helps developers to detect messy and risky code. 
 
-DMD leverages Generative AI (using LLMs like Open AI GPT) to apply the concept to Natural Language Documents in daily business situations.
+DMD leverages Salesforce's Einstein Prompt Templates to apply the concept to Natural Language Documents in daily business situations. This native approach allows administrators to adjust the AI model used and lets non-technical users modify prompts through Salesforce's trusted platform.
 
-As in PMD, DMD allows User to create sets of rules and then check documents against it.
-For the Rulecheck the document is send to a Generative AI API including instruction on how to check and responds for a given rule. For each rule the app creates a Result record with a description of the status.
+As in PMD, DMD allows Users to create sets of rules and then check documents against it.
+For the Rulecheck, the document text and rule definitions are processed using Einstein Prompt Templates which analyze the content and respond with structured feedback. For each rule, the app creates a Result record with a description of the status.
 
 
 When the App is installed in a Subscriber's org:
@@ -59,8 +59,8 @@ When the App is installed in a Subscriber's org:
         boundary api
     }
 
-    node AiProvider {
-        boundary ai
+    node "Einstein LLM" #AliceBlue {
+        boundary promptTemplates
     }
 
     SysAdmin --> ExtractApi : manage account
@@ -70,7 +70,7 @@ When the App is installed in a Subscriber's org:
 
     LowCodeProCode -->  Files : reads
     LowCodeProCode --> api : callout
-    LowCodeProCode --> ai : callout
+    LowCodeProCode --> promptTemplates : document analysis
     LowCodeProCode <-up-> CustomObjects
     LowCodeProCode <-up-> SettingsAndMetadata
     @enduml
