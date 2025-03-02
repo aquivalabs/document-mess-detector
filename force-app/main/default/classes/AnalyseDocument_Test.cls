@@ -16,9 +16,7 @@ private class AnalyseDocument_Test {
             Ruleset rs = new Ruleset();
             Rule__c r = (Rule__c) new Rule(rs).persist();                   
             
-            new HttpMock()
-                .post('/api/v1/pdf-extractor', 'extracted Text')
-            .mock();
+            new HttpMock().post('/api/v1/pdf-extractor', 'extracted Text').mock();
 
             CompletionApi.Result result = new CompletionApi.Result();
             result.ruleId = r.Id;

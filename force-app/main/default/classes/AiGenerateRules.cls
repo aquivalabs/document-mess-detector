@@ -1,6 +1,4 @@
-public with sharing class AiGenerateRules implements Triggers.Handler, Triggers.AfterInsert, Triggers.AfterUpdate, Queueable {
-
-    private List<Ruleset__c> rulesets;
+public with sharing class AiGenerateRules implements Triggers.Handler, Triggers.AfterInsert, Triggers.AfterUpdate {
 
     @TestVisible
     private static CompletionApi.Rules mockedRules;
@@ -10,10 +8,6 @@ public with sharing class AiGenerateRules implements Triggers.Handler, Triggers.
     // Note: Default constructor required for Trigger Framework
     @SuppressWarnings('PMD.EmptyStatementBlock')
     public AiGenerateRules() {}
-
-    public AiGenerateRules(List<Ruleset__c> rulesets) {
-        this.rulesets = rulesets;
-    }
 
 
     // PUBLIC
@@ -30,35 +24,24 @@ public with sharing class AiGenerateRules implements Triggers.Handler, Triggers.
         execute(ctx);
     }
 
-    public void execute(QueueableContext ctx) {
+    public void execute(Triggers.Context ctx) {
         fflib_SObjectUnitOfWork uow = new fflib_SObjectUnitOfWork(new List<SObjectType>{ Rule__c.SOBjectType, RuleInSet__c.SObjectType });
 
-        for(Ruleset__c ruleset : rulesets) {
-            execute(ruleset, uow);
+        for(Ruleset__c ruleset : (List<Ruleset__c>) ctx.props.newList) {
+            // Note: When toggled on Insert there is no oldMap yet
+            Boolean hasActuallyChanged = (ctx.props.isInsert || !((Ruleset__c) ctx.props.oldMap.get(ruleset.Id)).AiGenerateRules__c);
+
+            if(ruleset.AiGenerateRules__c && hasActuallyChanged) {
+                execute(ruleset, uow);
+            }
         }
 
         uow.commitWork();
     }
 
-    public void execute(Triggers.Context ctx) {
-        List<Ruleset__c> relevant = new List<Ruleset__c>();
-
-        for(Ruleset__c ruleset : (List<Ruleset__c>) ctx.props.newList) {
-            // Note: When toggled on Insert there is no oldMap yet
-            Boolean hasActuallyChanged = (ctx.props.isInsert || !((Ruleset__c) ctx.props.oldMap.get(ruleset.Id)).AiGenerateRules__c);
-            
-            if(ruleset.AiGenerateRules__c && hasActuallyChanged) {
-                relevant.add(ruleset);
-            }
-        }
-
-        System.enqueueJob( new AiGenerateRules(relevant) );
-    }
-
 
     // PRIVATE
 
-    // Executes the rule generation process for a given ruleset.
     private void execute(Ruleset__c ruleset, fflib_SObjectUnitOfWork uow) {
         Notification message = new Notification(ruleset.OwnerId).target(ruleset.Id).with(ruleset.Name);
 
@@ -99,17 +82,12 @@ public with sharing class AiGenerateRules implements Triggers.Handler, Triggers.
         input.isPreview = false;
         input.inputParams = params;
 
-        ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output = ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('GenerateRules',input);
-        CompletionApi.Rules rules = (CompletionApi.Rules) JSON.deserialize(output.generations[0].text, CompletionApi.Rules.class);
-        return (Test.isRunningTest() && mockedRules != null) ? mockedRules : rules;
-    }
+        CompletionApi.Rules result = mockedRules;
 
-    // Converts a Ruleset__c record into a CompletionApi.Ruleset object.
-    private CompletionApi.Ruleset toObject(Ruleset__c record) {
-        CompletionApi.Ruleset result = new CompletionApi.Ruleset();
-        result.name = record.Name;    
-        result.description = record.Description__c;    
-        result.context = record.Context__c;   
+        if(!Test.isRunningTest()) {
+            ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output = ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('GenerateRules',input);
+            result = (CompletionApi.Rules) JSON.deserialize(output.generations[0].text, CompletionApi.Rules.class);
+        }
         return result;
     }
 }

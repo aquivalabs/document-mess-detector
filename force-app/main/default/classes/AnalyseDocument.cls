@@ -98,9 +98,12 @@ public class AnalyseDocument implements Triggers.Handler, Triggers.AfterInsert, 
             'Input:rules' => rules
         };
 
-        ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output = ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('AnalyseDocument',input);
-        CompletionApi.Results result = (CompletionApi.Results) JSON.deserialize(output.generations[0].text, CompletionApi.Results.class);
-        return (Test.isRunningTest() & mockedResults != null) ? mockedResults : result;
+        CompletionApi.Results result = mockedResults;
+        if(!Test.isRunningTest()) {
+            ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output = ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('AnalyseDocument',input);
+            result = (CompletionApi.Results) JSON.deserialize(output.generations[0].text, CompletionApi.Results.class);
+        }
+        return result;
     }
 
     private void persist(Analysis__c analysis, Exception error) {

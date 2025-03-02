@@ -16,14 +16,10 @@ private class AiGenerateRules_Test {
         AiGenerateRules.mockedRules = mocked;
     
         // Exercise
-        Test.startTest();
-
         new Ruleset()
                 .name('10 Rules to write the perfect loveletter')
                 .aiRules()
                 .persist();
-
-        Test.stopTest();
     
         // Verify
         System.assertEquals(rule.content, [SELECT Content__c FROM Rule__c LIMIT 1].Content__c);
