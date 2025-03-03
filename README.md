@@ -35,7 +35,7 @@ DMD is very different and uses Large Language Models (LLMs) like OpenAI, Deepsee
 
 DMD is a technology proof-of-concept by the Salesforce Product Development Partner Aquiva Labs. It was built to showcase the use of Generative AI within a native Salesforce Managed Package, even before Salesforce released its native, trusted LLM features.
 
-The App is also available as a [free app on the AppExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=8ae56cbd-8b6b-4009-bf17-1781d9416fe8) and as Open Source repository on Github.
+The App is also available as a [free app on the AppExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=8ae56cbd-8b6b-4009-bf17-1781d9416fe8). The AppExchange version is outdated and does not reflect this repos code.
 
 ### How do I use 
 
