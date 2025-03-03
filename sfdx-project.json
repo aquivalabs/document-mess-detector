@@ -4,7 +4,7 @@
       "path": "force-app",
       "package": "document-mess-detector",
       "versionName": "March '25",
-      "versionNumber": "1.6.0.NEXT",
+      "versionNumber": "1.7.0.NEXT",
       "default": true,
       "versionDescription": "",
       "packageMetadataAccess": {
@@ -27,6 +27,7 @@
     "document-mess-detector@1.4.0-1": "04tVI0000003xA1YAI",
     "document-mess-detector@1.5.0-1": "04tVI000000GHrJYAW",
     "document-mess-detector@1.5.0-2": "04tVI000000GHsvYAG",
-    "document-mess-detector@1.6.0-1": "04tVI000000HvWXYA0"
+    "document-mess-detector@1.6.0-1": "04tVI000000HvWXYA0",
+    "document-mess-detector@1.7.0-1": "04tVI000000HvujYAC"
   }
 }
