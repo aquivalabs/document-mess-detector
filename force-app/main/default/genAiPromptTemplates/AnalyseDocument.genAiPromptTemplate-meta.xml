@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionIdentifier>NriaRCuMzY3qrJSIhVSOrHXNO1TawRqqrnxwCt0jpCw=_1</activeVersionIdentifier>
+    <activeVersionIdentifier>NriaRCuMzY3qrJSIhVSOrHXNO1TawRqqrnxwCt0jpCw=_2</activeVersionIdentifier>
     <developerName>AnalyseDocument</developerName>
     <masterLabel>Analyse Document</masterLabel>
     <templateVersions>
@@ -55,6 +55,58 @@ You must provide your results as a JSON object with the following format:
         <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
         <status>Published</status>
         <versionIdentifier>NriaRCuMzY3qrJSIhVSOrHXNO1TawRqqrnxwCt0jpCw=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Your task is to check if a given business &lt;DOCUMENT&gt; conforms to a set of &lt;RULES&gt;.
+
+You will receive a Json object with the following structure:
+{
+ &quot;document&quot;: &quot;document plaintext&quot;,
+ &quot;rules&quot;: [
+  {
+   &quot;ruleId&quot;: &quot;unique rule identifier&quot;,
+   &quot;content&quot;: &quot;the actual rule content&quot;
+  }
+ ]
+}
+
+
+You must provide your results as a JSON object with the following format:
+{
+    &quot;results&quot;: [
+        {
+            &quot;ruleId&quot;: &quot;Id of the current Rule&quot;,
+            &quot;status&quot;: &quot;One of 3 values: &apos;Success&apos;, &apos;Unsure&apos;, &apos;Fail&apos; depending on whether the rule is fulfilled or not. Use &apos;Unsure&apos; only in seldom cases.&quot;,
+            &quot;justification&quot;: &quot;Justify your decision with very specific samples from the document. It must be obvious you didn&apos;t make this up. Even quote from the document or give page numbers to prove your point.&quot;
+        }
+    ]
+}
+
+&lt;DOCUMENT&gt;
+{!$Input:documentText}
+&lt;/DOCUMENT&gt;
+
+&lt;RULES&gt;
+{!$Input:rules}
+&lt;/RULES&gt;
+</content>
+        <inputs>
+            <apiName>documentText</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>documentText</masterLabel>
+            <referenceName>Input:documentText</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>rules</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>rules</masterLabel>
+            <referenceName>Input:rules</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>NriaRCuMzY3qrJSIhVSOrHXNO1TawRqqrnxwCt0jpCw=_2</versionIdentifier>
     </templateVersions>
     <type>einstein_gpt__flex</type>
     <visibility>Global</visibility>

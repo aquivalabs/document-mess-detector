@@ -1,7 +1,7 @@
 // Note: Most code taken from https://github.com/Docparser/Docparser-Apex/blob/master/upload_document.apx
 public with sharing class DocumentText {
 
-    public static final Set<String> SUPPORTED_TYPES = new Set<String>{ 'pdf'};
+    public static final Set<String> SUPPORTED_TYPES = new Set<String>{ 'pdf', 'txt'};
 
     // PUBLIC
 
