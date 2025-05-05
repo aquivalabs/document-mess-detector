@@ -4,7 +4,7 @@
       "path": "force-app",
       "package": "document-mess-detector",
       "versionName": "May '25",
-      "versionNumber": "1.9.0.NEXT",
+      "versionNumber": "1.10.0.NEXT",
       "default": true,
       "versionDescription": "",
       "packageMetadataAccess": {
@@ -24,7 +24,7 @@
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "63.0",
   "packageAliases": {
-    "app-foundations@LATEST": "04tVI000000L2GXYA0",
+    "app-foundations@LATEST": "04tVI000000L2QDYA0",
     "document-mess-detector": "0HoVI0000002lFl0AI",
     "document-mess-detector@1.0.0-1": "04tVI0000002rMnYAI",
     "document-mess-detector@1.1.0-1": "04tVI0000002rZhYAI",
@@ -36,6 +36,7 @@
     "document-mess-detector@1.6.0-1": "04tVI000000HvWXYA0",
     "document-mess-detector@1.7.0-1": "04tVI000000HvujYAC",
     "document-mess-detector@1.8.0-2": "04tVI000000L2I9YAK",
-    "document-mess-detector@1.9.0-1": "04tVI000000L2JlYAK"
+    "document-mess-detector@1.9.0-1": "04tVI000000L2JlYAK",
+    "document-mess-detector@1.10.0-1": "04tVI000000L2RpYAK"
   }
 }
