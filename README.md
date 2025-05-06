@@ -2,9 +2,11 @@
 
 ... is a native Salesforce app that uses Generative AI to check whether business documents in Files and Attachments comply with a set of rules.
 
-- [Install v1.7 as Unlocked Package (Production)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tVI000000HvujYAC)
+> ⚠️ **Important:** Before installing DMD, you must first install the [App Foundations](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tVI000000L2QDYA0) package as it is a required dependency.
 
-- [Install v1.7 as Unlocked Package (Sandbox)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tVI000000HvujYAC)
+- [Install v1.10 as Unlocked Package (Production)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tVI000000L2RpYAK)
+
+- [Install v1.10 as Unlocked Package (Sandbox)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tVI000000L2RpYAK)
 
 ### Highlight
 
