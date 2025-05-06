@@ -14,7 +14,7 @@
     - [3.3. DocumentReviewer](#33-documentreviewer)
         - [3.3.1. Check a Document](#331-check-a-document)
 - [4. Data Model](#4-data-model)
-    - [4.1. Custom Settings : `DmdSettings__c`](#41-custom-settings-dmdsettings__c)
+    - [4.1. Custom Settings : `Settings__c`](#41-custom-settings-dmdsettings__c)
 
 <!-- /TOC -->
 
@@ -124,19 +124,19 @@ Post install the Admin needs to configure the app from Apps Setup tab.
 
     actor AppAdmin
     participant SetupTab
-    database DmdSettings__c
+    database Settings__c
 
     == Extract API Step ==
     AppAdmin --> SetupTab : Provide Extract API credentials
-    SetupTab --> DmdSettings__c : Store Protected
+    SetupTab --> Settings__c : Store Protected
     @enduml
 ```
 
-One Setup Step asks for Extract API credentials which on Save are securely stored in a Protected Custom Setting called `DmdSettings__c`. This is used to callout to an external API to extract text from PDF documents in Salesforce.
+One Setup Step asks for Extract API credentials which on Save are securely stored in a Protected Custom Setting called `Settings__c`. This is used to callout to an external API to extract text from PDF documents in Salesforce.
 
 ##### 3.1.1.1. Relevant Packaged Components
 
-- Custom Objects: `DmdSettings__c`
+- Custom Objects: `Settings__c`
 - Tab: `Setup__c.tab-meta.xml`
 - Visualforce: `setup.page`, `setupStep.component`
 - Classes: `setup/app-setup/*`, `SetupPageCtrl.cls`, `SetupExtractApi(_Test).cls`
@@ -339,7 +339,7 @@ The main use case of the application is running document scan against selected f
 ##### 3.3.1.1. Relevant Packaged Components
 
 - Custom Objects/Tabs: `Analysis__c`, `Result__c`
-- Settings: `DmdSettings__c`
+- Settings: `Settings__c`
 - LWC: `documentSelector`, `documentAnalysisHistory`
 - Classes: `AnalyseDocument(_Test).cls`, `NotifyUserOnAnalysisChange(_Test).cls`, `ExtractApi(_Test).cls`
 
@@ -419,7 +419,7 @@ It also comes with a Protected Custom Setting and a Public Custom Metadata Type 
 @enduml
 ```
 
-### 4.1. Custom Settings : `DmdSettings__c`
+### 4.1. Custom Settings : `Settings__c`
 
 For safely storing global Application settings the app comes with a Protected Custom Setting. 
 Currently we only store API credentials for the Extract API there. This is managed by the custom Setup page.

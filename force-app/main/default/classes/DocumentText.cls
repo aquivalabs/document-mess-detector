@@ -63,13 +63,13 @@ public with sharing class DocumentText {
     // PRIVATE
 
     private static String apiKey() {
-        DmdSettings__c result = DmdSettings__c.getOrgDefaults();
+        Settings__c result = Settings__c.getOrgDefaults();
         
-        if(result == null || result.txt_ExtractApiKey__c == null ) {
+        if(result == null || result.ExtractApiKey__c == null ) {
             throw new ApplicationException('No Extract API Key found in Settings.');
         }
 
-        return result.txt_ExtractApiKey__c;
+        return result.ExtractApiKey__c;
     }
 
     private void failWhenInsufficientHeapFor(ContentVersion document) {

@@ -147,7 +147,7 @@ package "Salesforce" {
   }
   
   package "Protected Settings" {
-    [DmdSettings__c]
+    [Settings__c]
   }
   
   package "Einstein Platform" {
@@ -172,7 +172,7 @@ package "External Services" {
 [Rule__c] <--> [RuleInSet__c]
 
 [Document Mess Detector] --> [Einstein Prompt Templates]
-[Document Mess Detector] --> [DmdSettings__c]
+[Document Mess Detector] --> [Settings__c]
 [Document Mess Detector] --> Files
 
 [Document Mess Detector] --> [ExtractorAPI.com]: Text extraction
@@ -192,7 +192,7 @@ package "External Services" {
    - `RegressionTest__c`: Configuration for regression testing
 
 2. **Protected Custom Settings**:
-   - `DmdSettings__c`: Organization-wide settings, including API keys
+   - `Settings__c`: Organization-wide settings, including API keys
 
 3. **External Integrations**:
    - **ExtractorAPI.com**: 3rd party service for document text extraction
@@ -281,7 +281,7 @@ end note
 #### 2. Credential Storage
 
 - **API Key Management**:
-  - ExtractorAPI key stored in protected custom settings (`DmdSettings__c`)
+  - ExtractorAPI key stored in protected custom settings (`Settings__c`)
   - Protected custom settings are encrypted at rest by Salesforce
   - Only accessible through Apex, not directly through UI or reports
   - `SetupExtractApi` class handles secure storage and retrieval

@@ -5,7 +5,7 @@ private class AnalysisHistoryCtrl_Test {
     
     @TestSetup
     static void setup() {
-        insert new DmdSettings__c(txt_ExtractApiKey__c='any');
+        insert new Settings__c(ExtractApiKey__c='any');
     }
 
     @IsTest

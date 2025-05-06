@@ -82,7 +82,6 @@
     <tabs>Ruleset__c</tabs>
     <tabs>Analysis__c</tabs>
     <tabs>RegressionTest__c</tabs>
-    <tabs>Setup</tabs>
     <tabs>LearnMore</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

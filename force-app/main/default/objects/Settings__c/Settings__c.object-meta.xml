@@ -2,6 +2,6 @@
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <customSettingsType>Hierarchy</customSettingsType>
     <enableFeeds>false</enableFeeds>
-    <label>Settings</label>
-    <visibility>Protected</visibility>
+    <label>DMD Settings</label>
+    <visibility>Public</visibility>
 </CustomObject>
