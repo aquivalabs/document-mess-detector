@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-box slds-p-top_small" style="background-color: white;">
+        <div class="slds-text-heading_medium"> Import Ruleset Files:</div> <br/>
+        <lightning-input
+            type="file"
+            label="Upload"
+            accept={acceptedFormats}
+            onchange={uploadFile}>
+        </lightning-input>
+        <br/>
+        <div class="slds-form-element">
+            <a href={fileUrl}  target="_blank">{fileName}</a>
+        </div>
+        <br/>
+        <lightning-button variant="brand" label="Import" onclick={importFile} class="slds-p-top_small"> </lightning-button>
+    </div>
+</template>

@@ -1,0 +1,13 @@
+{
+  "tabWidth": 4,
+  "useTabs": false,
+  "singleQuote": true,
+  "proseWrap": "preserve",
+  "printWidth": 120,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": { "parser": "lwc" }
+    }
+  ]
+}

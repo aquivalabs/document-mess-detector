@@ -1,0 +1,18 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true,
+      "definitionFile": "config/project-scratch-def.json",
+      "package": "DMD",
+      "versionName": "1.0",
+      "versionNumber": "1.0.0.NEXT"
+    }
+  ],
+  "name": "document-mess-detector",
+  "namespace": "dmd_ai",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "57.0",
+  "packageAliases": {
+  }
+}

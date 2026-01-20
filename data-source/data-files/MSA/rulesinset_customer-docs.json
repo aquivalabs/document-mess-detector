@@ -1,0 +1,99 @@
+{
+    "records": [
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref1" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Ref2"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref2" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Ref3"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref3" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Ref4"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref4" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Ref5"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref5" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref1"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref6" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref2"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref7" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref3"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref8" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref4"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref9" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref5"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref10" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref6"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref11" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref7"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref12" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref8"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref13" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref9"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref14" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref10"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref15" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref11"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref16" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref12"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref17" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref13"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref18" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref14"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_MSA_Cus_Ref19" },
+            "Ruleset__c": "@Ruleset_MSA_Ref2",
+            "Rule__c": "@Rule_MSA_Cus_Ref15"
+        }
+    ]
+}

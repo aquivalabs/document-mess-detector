@@ -1,0 +1,76 @@
+{
+    "records": [
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_NDA_Ref1" },
+            "Name": "NDA - Should be mutual",
+            "Content__c": "Check the agreement for reciprocal terms that apply to both parties, not just one.",
+            "Description__c": "Agreement should cover both parties signing the contract."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_NDA_Ref2" },
+            "Name": "NDA - Definition of confidential information",
+            "Content__c": "Confirm that confidential information is clearly defined in the document.",
+            "Description__c": "Confidential information should be defined."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_NDA_Ref3" },
+            "Name": "NDA - Remedies",
+            "Content__c": "Look for keywords like 'breach', 'remedy', and information about penalties and consequences.",
+            "Description__c": "Penalties for breaching the contract should be mentioned."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_NDA_Ref4" },
+            "Name": "NDA - Return or destruction of confidential information",
+            "Content__c": "Review sections discussing the return or destruction of confidential information within a specified timeframe.",
+            "Description__c": "Destruction or return of confidential information should be addressed."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_NDA_Ref5" },
+            "Name": "NDA - Effective dates and term of agreement",
+            "Content__c": "Identify the timeframe during which the contract is valid.",
+            "Description__c": "Contract's effective dates and term should be specified."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_NDA_Ref6" },
+            "Name": "NDA - Notifications",
+            "Content__c": "Review sections regarding breach notifications and amendments to the contract.",
+            "Description__c": "Notification procedures should be specified."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_NDA_Ref7" },
+            "Name": "NDA - Warranty",
+            "Content__c": "Flag sections containing the word 'warranty' and if possible, 'no warranty' language.",
+            "Description__c": "Warranty terms should be included."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_NDA_Ref8" },
+            "Name": "NDA - Liability",
+            "Content__c": "Flag sections mentioning the word 'liability' for review.",
+            "Description__c": "Liability should be addressed in the document."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_NDA_Ref9" },
+            "Name": "NDA - Intellectual Property",
+            "Content__c": "Flag sections mentioning the word 'intellectual property' for review.",
+            "Description__c": "Intellectual property terms should be addressed."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_NDA_Ref10" },
+            "Name": "NDA - Exceptions or Exclusions",
+            "Content__c": "Flag for review sections discussing exceptions and exclusions, where information exposure is permissible.",
+            "Description__c": "Exceptions or exclusions to confidentiality should be mentioned."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_NDA_Ref11" },
+            "Name": "NDA - Termination or Severability",
+            "Content__c": "Review sections discussing contract termination or severability.",
+            "Description__c": "Termination or severability provisions should be specified."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_NDA_Ref12" },
+            "Name": "NDA - Governing Law",
+            "Content__c": "Identify the applicable state and country laws governing the contract.",
+            "Description__c": "Governing law should be mentioned."
+        }
+    ]
+}

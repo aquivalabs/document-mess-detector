@@ -1,0 +1,23 @@
+
+{
+	"recommendations": [
+		"salesforce.salesforcedx-vscode",
+		"KevinJones.apex-assist",
+		"FinancialForce.lana",
+		"yzane.markdown-pdf",
+		"shd101wyy.markdown-preview-enhanced",
+		"salesforce.analyticsdx-vscode-templates",
+		"chuckjonas.apex-autocomplete",
+		"chuckjonas.apex-pmd",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"VignaeshRamA.sfdx-package-xml-generator",
+		"wayou.vscode-todo-highlight",
+		"MS-vsliveshare.vsliveshare",
+		"eamodio.gitlens",
+		"znck.grammarly",
+		"redhat.vscode-xml",
+		"financialforce.lana",
+	]
+}
+  

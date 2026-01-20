@@ -1,0 +1,44 @@
+{
+    "records": [
+        {
+            "attributes": { "type": "dmd_ai__RuleInSet__c", "referenceId": "RuleInSet_Ref1" },
+            "dmd_ai__Ruleset__c": "@Ruleset_Ref1",
+            "dmd_ai__Rule__c": "@Rule_Ref1"
+        },
+        {
+            "attributes": { "type": "dmd_ai__RuleInSet__c", "referenceId": "RuleInSet_Ref2" },
+            "dmd_ai__Ruleset__c": "@Ruleset_Ref1",
+            "dmd_ai__Rule__c": "@Rule_Ref2"
+        },
+        {
+            "attributes": { "type": "dmd_ai__RuleInSet__c", "referenceId": "RuleInSet_Ref3" },
+            "dmd_ai__Ruleset__c": "@Ruleset_Ref1",
+            "dmd_ai__Rule__c": "@Rule_Ref3"
+        },
+        {
+            "attributes": { "type": "dmd_ai__RuleInSet__c", "referenceId": "RuleInSet_Ref4" },
+            "dmd_ai__Ruleset__c": "@Ruleset_Ref1",
+            "dmd_ai__Rule__c": "@Rule_Ref4"
+        },
+        {
+            "attributes": { "type": "dmd_ai__RuleInSet__c", "referenceId": "RuleInSet_Ref5" },
+            "dmd_ai__Ruleset__c": "@Ruleset_Ref1",
+            "dmd_ai__Rule__c": "@Rule_Ref5"
+        },
+        {
+            "attributes": { "type": "dmd_ai__RuleInSet__c", "referenceId": "RuleInSet_Ref6" },
+            "dmd_ai__Ruleset__c": "@Ruleset_Ref1",
+            "dmd_ai__Rule__c": "@Rule_Ref6"
+        },
+        {
+            "attributes": { "type": "dmd_ai__RuleInSet__c", "referenceId": "RuleInSet_Ref7" },
+            "dmd_ai__Ruleset__c": "@Ruleset_Ref1",
+            "dmd_ai__Rule__c": "@Rule_Ref7"
+        },
+        {
+            "attributes": { "type": "dmd_ai__RuleInSet__c", "referenceId": "RuleInSet_Ref8" },
+            "dmd_ai__Ruleset__c": "@Ruleset_Ref1",
+            "dmd_ai__Rule__c": "@Rule_Ref8"
+        }
+    ]
+}

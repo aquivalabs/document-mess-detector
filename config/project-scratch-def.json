@@ -1,0 +1,15 @@
+{
+  "orgName": "document-mess-detector_DEV",
+  "edition": "Developer",
+  "language": "en_US",
+  "features": ["EnableSetPasswordInApi", "EinsteinGPTForDevelopers"],
+  "namespace": "",
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    }
+  }
+}

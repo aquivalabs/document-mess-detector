@@ -1,0 +1,7 @@
+# Ignore artifacts
+**/staticresources/**
+.localdevserver
+.sfdx
+.vscode
+coverage/
+*-meta.xml

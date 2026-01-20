@@ -1,0 +1,4 @@
+#!/bin/bash
+DEV_HUB_ALIAS="DevHubAquiva"
+PACKAGE_NAME="DMD"
+SCRATCH_ORG_ALIAS="dmd_DEV"

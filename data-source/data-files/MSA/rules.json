@@ -1,0 +1,173 @@
+{
+    "records": [
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref1" },
+            "Name": "MSA - Sections",
+            "Content__c": "Ensure that the document includes all listed sections: \\n1. Statement of Work. \\n2. Independent Contractor. \\n3. Payment. \\n4. Acceptance. \\n5. Term of Agreement \\n6. Termination of Agreement. \\n7. Warranties. \\n8. Works for Hire. \\n9. Non-Competition and Non-Solicitation. \\n10. Mutual Indemnification. \\n11. Confidential Information. \\n12. Miscellaneous",
+            "Description__c": "MSA sections inclusion"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref2" },
+            "Name": "MSA - Payment rules",
+            "Content__c": "Ensure payments are made within 15 or 30 days of receipt.",
+            "Description__c": "MSA Payment"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref3" },
+            "Name": "MSA - Naming",
+            "Content__c": "Ensure that the client's full legal name is used in the first paragraph, referred to as \"CLIENT\" throughout the document until the authorization page, where the full legal name is used again. Additionally, ensure \"AQUIVA\" is used until the Authorization Section, and then it should be \"AQUIVA LABS, LLC\".",
+            "Description__c": "MSA contractors naming"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref4" },
+            "Name": "MSA - Client Address",
+            "Content__c": "Ensure the client's address is always filled in with their principal place of business.",
+            "Description__c": "Client address validation"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref5" },
+            "Name": "MSA - Aquiva Address",
+            "Content__c": "Verify that the Aquiva address is always filled in with accurate and complete data:\n\"\"AQUIVA LABS, LLC (“AQUIVA”) with a principal place of business at 52 Riley Road #522, Celebration, FL 34747 USA\"",
+            "Description__c": "Aquiva address validation"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref6" },
+            "Name": "MSA - Acceptance period",
+            "Content__c": "Verify if the acceptance period is set to 10 days by default, and can be overridden",
+            "Description__c": "Acceptance period check"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref7" },
+            "Name": "MSA - Termination rule",
+            "Content__c": "Termination of Agreement rule should not apply to Statements of Work in this document",
+            "Description__c": "Termination rule check"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref8" },
+            "Name": "MSA - Forbid changes in Warranties",
+            "Content__c": "In Warranties section no changes allowed. Original text: \"AQUIVA represents and warrants: i) that its services will be performed in a timely and professional manner in accordance with generally accepted industry practices and procedures; ii) AQUIVA shall cooperate with CLIENT personnel, shall not interfere with the operation of CLIENT’s business and shall observe all rules, regulations and security requirements of CLIENT; and iii) All Deliverables will be original works of authorship and not infringe any Intellectual Property Right (defined below) of any third party. AQUIVA hereby disclaims, and CLIENT hereby waives, any and all warranties whether expressed or implied unless specified in a particular Statement of Work.\"\n",
+            "Description__c": "Changes in \"Warranties\" section"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref9" },
+            "Name": "MSA - Forbid changes in Works for Hire (IP)",
+            "Content__c": "No changes allowed to 'Works for Hire (IP)' section. Original text: 'AQUIVA agrees that all fully and partially completed Deliverables, materials, documentation, reports, and other work products that it develops in the course of performing the services under this Agreement (“Work Product”) shall be considered “Works for Hire”. All Work Products shall be owned exclusively by CLIENT following full payment of services to AQUIVA, and AQUIVA will have no property or other proprietary rights in such works upon receipt of payment for the work performed. Work Product shall be turned over to CLIENT promptly upon CLIENT’s request. Notwithstanding the designation of a final custom-developed product as a “Work for Hire”, AQUIVA shall own and retain all rights to any component, tool, design, process, trade secret or other know-how developed or used to create the final “Work for Hire” work product.AQUIVA agrees to assign to CLIENT all rights, title, and interest, including without limitation, patents and copyrights in the Work Product. Additionally, AQUIVA shall take all acts and execute all documents reasonably necessary in order to affect such assignment, at CLIENT’s expense'\n",
+            "Description__c": "Changes in \"Works for Hire (IP)\" section"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref10" },
+            "Name": "MSA - Forbid changes in Non-Competition and Non-Solicitation",
+            "Content__c": "No changes allowed to 'Non-Competition and Non-Solicitation' section. Original text: 'AQUIVA agrees that, for the duration of any individual SOW, it will not, directly or indirectly, engage in the design, development, sale or licensing of any product that is the same as the Work Product produced under the terms of this agreement for any CLIENT competitor. Except for the foregoing restriction, this Agreement does not limit the type of services AQUIVA may perform for any of AQUIVA’s other CLIENTs. \nCLIENT and AQUIVA agree that during the term of this agreement, and for a period of one (1) year following termination of this Agreement, they shall not directly or indirectly hire, engage or employ (as an employee, consultant or otherwise) any employees of the other party without express written permission. CLIENT and AQUIVA agree they will not encourage employees of either party to terminate employment for any purpose, including to solicit employees for hire.'\"\n",
+            "Description__c": "Changes in \"Non-Competition and Non-Solicitation\" section"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref11" },
+            "Name": "MSA - Forbid changes in Mutual Indemnification",
+            "Content__c": "No changes allowed to 'Mutual Indemnification' section. Original text: 'AQUIVA shall indemnify, defend, and hold harmless CLIENT and its successors and assigns from any claims, suits, damages, costs, expenses, judgments or causes of action initiated by any third party against CLIENT where such actions result from or arise the acts or omissions of AQUIVA in the performance of this Agreement or any Statement of Work hereto. \nCLIENT shall indemnify, defend, and hold harmless AQUIVA and its successors and assigns from any claims, suits, damages, costs, expenses, judgments or causes of action initiated by any third party against AQUIVA where such actions result from or arise the acts or omissions of CLIENT in the performance of this Agreement.'\"\n",
+            "Description__c": "Changes in \"Mutual Indemnification\" section"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref12" },
+            "Name": "MSA - Forbid changes in Confidential Information",
+            "Content__c": "No changes allowed to 'Confidential Information' section. Original text: 'All information and materials, including computer software (hereafter “CLIENT Materials”), provided to AQUIVA by CLIENT are and shall remain the property of CLIENT or its licensors, which shall retain all intellectual property rights therein. AQUIVA shall retain all CLIENT Materials and Work Product in strict confidence and use the CLIENT Materials solely as necessary for performing the services in compliance with the terms and conditions of this Agreement. \nUpon termination for any reason, AQUIVA will immediately return to CLIENT all CLIENT Materials and Work Product. AQUIVA shall not retain copies or make or retain derivatives of the CLIENT Materials or Work Product in any form whatsoever without CLIENT’s prior written permission. AQUIVA shall not use, assign, convey, or otherwise transfer any CLIENT Materials or Work Product in any manner other than as may be expressly permitted by this Agreement'\"\n",
+            "Description__c": "Changes in \"Confidential Information\" section"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Ref13" },
+            "Name": "MSA - Forbid changes in Miscellaneous",
+            "Content__c": "No changes allowed to 'Miscellaneous' section. Original text: 'This Agreement may be amended or modified only by a written instrument executed by the authorized representatives of the parties. \nNo delay or omission by CLIENT in exercising any right under this Agreement shall operate as a waiver of that or any other right. A waiver or consent given by CLIENT on any one occasion shall be effective only in that instance and shall not be construed as a bar or waiver of any right on any other occasion. \nAQUIVA shall not have the right to assign any of its rights or delegate any of its duties without express written consent of CLIENT. Any non-consented-to assignment or delegation whether express or implied or by operation of law, shall be void and shall constitute a breach and a default by AQUIVA. \nThis Agreement shall be governed by and construed in accordance with the laws of the State of Florida, without regard to its choice of law rules. Both parties agree to comply with all applicable laws, rules, and/or regulations in performance of this Agreement and any individual Statement of Work issued hereunder. \nIn the event any provision of this Agreement shall be held invalid, the same shall not invalidate or otherwise affect in any respect any other term or terms of this Agreement, which term or terms shall remain in full force and effect. \nAQUIVA shall not use the name of CLIENT or CLIENT’s trademarks, or trade names, whether registered or not, in any written communication to a third party, including any sales or marketing publication or advertisement, without prior written consent of CLIENT. \nThis Agreement contains the entire understanding between the parties and supersedes, replaces, and takes precedence over any prior understanding or oral or written agreement between the parties respecting the subject matter of this Agreement. There are no representations, agreements, arrangements, nor understandings, oral or written, between the parties hereto relating to the subject matter of this Agreement which are not fully expressed herein.'\"\n",
+            "Description__c": "Changes in \"Miscellaneous\" section"
+        },
+
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref1" },
+            "Name": "MSA - Intellectual Property (IP)",
+            "Content__c": "Aquiva's IP must always be protected; flag any variations in language for review.",
+            "Description__c": "Flag documents for Aquiva's IP protection review"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref2" },
+            "Name": "MSA - Deliverables and Ownership",
+            "Content__c": "Flag for review when any deliverables and ownership information is encountered.",
+            "Description__c": "Flag deliverables and ownership details for review"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref3" },
+            "Name": "MSA - Subcontracting",
+            "Content__c": "Flag any subcontracting language in document for review.",
+            "Description__c": "Review any subcontracting language"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref4" },
+            "Name": "MSA - Acceptance Testing (Over 10 Days)",
+            "Content__c": "Flag if acceptance testing is stated to be over 10 business days.",
+            "Description__c": "Review acceptance testing exceeding 10 days"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref5" },
+            "Name": "MSA - Acceptance Testing (Criteria & Repercussions)",
+            "Content__c": "Flag acceptance criteria and repercussions for review.",
+            "Description__c": "Review acceptance testing criteria and repercussions"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref6" },
+            "Name": "MSA - Payment (Due Date)",
+            "Content__c": "Flag if payment is due beyond 15 or 30 days of receipt.",
+            "Description__c": "Review payment terms exceeding 15 or 30 days"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref7" },
+            "Name": "MSA - Payment (In Arrears)",
+            "Content__c": "Flag if payment term includes 'in arrears'.",
+            "Description__c": "Review payment terms 'in arrears'"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref8" },
+            "Name": "MSA - Expenses",
+            "Content__c": "Highlight expense sections within the document.",
+            "Description__c": "Highlight expense sections for review"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref9" },
+            "Name": "MSA - Termination",
+            "Content__c": "Flag termination clauses that differ from Aquiva MSA.",
+            "Description__c": "Review termination clauses differing from Aquiva MSA"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref10" },
+            "Name": "MSA - Confidentiality and Data Security",
+            "Content__c": "Flag confidentiality and data security clauses for review.",
+            "Description__c": "Review confidentiality and data security clauses"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref11" },
+            "Name": "MSA - Warranties",
+            "Content__c": "Flag any warranties for review and approval.",
+            "Description__c": "Review and approve warranty clauses"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref12" },
+            "Name": "MSA - Limitation of Liability",
+            "Content__c": "Flag any limitation of liability clauses for review.",
+            "Description__c": "Review limitation of liability clauses"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref13" },
+            "Name": "MSA - Insurance",
+            "Content__c": "Flag any insurance clauses for review.",
+            "Description__c": "Review insurance clauses"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref14" },
+            "Name": "MSA - Governing Law",
+            "Content__c": "Flag any governing law clauses for review.",
+            "Description__c": "Review governing law clauses"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_MSA_Cus_Ref15" },
+            "Name": "MSA - Non solicitation clause",
+            "Content__c": "Flag any non solicitation clauses for review.",
+            "Description__c": "Review non solicitation clauses"
+        }
+    ]
+}

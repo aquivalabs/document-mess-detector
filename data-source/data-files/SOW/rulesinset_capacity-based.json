@@ -1,0 +1,54 @@
+{
+    "records": [
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_CB_Ref1" },
+            "Ruleset__c": "@Ruleset_SOW_Ref2",
+            "Rule__c": "@Rule_SOW_Ref1"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_CB_Ref2" },
+            "Ruleset__c": "@Ruleset_SOW_Ref2",
+            "Rule__c": "@Rule_SOW_Ref14"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_CB_Ref3" },
+            "Ruleset__c": "@Ruleset_SOW_Ref2",
+            "Rule__c": "@Rule_SOW_Ref15"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_CB_Ref4" },
+            "Ruleset__c": "@Ruleset_SOW_Ref2",
+            "Rule__c": "@Rule_SOW_Ref16"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_CB_Ref5" },
+            "Ruleset__c": "@Ruleset_SOW_Ref2",
+            "Rule__c": "@Rule_SOW_Ref17"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_CB_Ref6" },
+            "Ruleset__c": "@Ruleset_SOW_Ref2",
+            "Rule__c": "@Rule_SOW_Ref18"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_CB_Ref7" },
+            "Ruleset__c": "@Ruleset_SOW_Ref2",
+            "Rule__c": "@Rule_SOW_Ref19"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_CB_Ref8" },
+            "Ruleset__c": "@Ruleset_SOW_Ref2",
+            "Rule__c": "@Rule_SOW_Ref20"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_CB_Ref9" },
+            "Ruleset__c": "@Ruleset_SOW_Ref2",
+            "Rule__c": "@Rule_SOW_Ref21"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_CB_Ref10" },
+            "Ruleset__c": "@Ruleset_SOW_Ref2",
+            "Rule__c": "@Rule_SOW_Ref22"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+.sfdx/
+.sf/
+IlluminatedCloud/
+.idea/
+node_modules
+.sfdx
+
+
+# MacOS system files
+.DS_Store
+
+.dccache
+session.properties
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/

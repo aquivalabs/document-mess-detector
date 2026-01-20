@@ -1,0 +1,24 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner size="medium" alternative-text="refresh"></lightning-spinner>
+    </template>
+
+    <lightning-card title="DMD - Document Mess Detector">
+        <div class="slds-var-p-horizontal_small">
+            <lightning-combobox
+                label="Select a Document:"
+                value={value}
+                options={options}
+                onchange={documentSelected}
+                class="slds-var-m-bottom_small"
+                required="true"
+            ></lightning-combobox>
+            <lightning-button
+                label="Analyze..."
+                onclick={createAnalysis}
+                disabled={isButtonDisabled}
+            ></lightning-button>
+        </div>
+        <c-document-analysis-history document-id={documentId}></c-document-analysis-history>
+    </lightning-card>
+</template>

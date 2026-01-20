@@ -1,0 +1,22 @@
+{
+    "apexPMD.runOnFileOpen": true,
+    "plantuml.server": "https://www.plantuml.com/plantuml",
+    "apexPMD.runOnFileChange": true,
+    "apexPMD.showStdOut": true,
+    "markdown-preview-enhanced.plantumlServer": "https://www.plantuml.com/plantuml",
+    "apexPMD.commandBufferSize": 2,
+    "apexPMD.rulesets": [
+        "ruleset.xml"
+    ],
+    "markdown-pdf.plantumlOpenMarker": "```plantuml",
+    "markdown-pdf.plantumlCloseMarker": "```",
+    "markdown-pdf.plantumlServer": "http://www.plantuml.com/plantuml",
+    "markdownAutoTOC.containerHeaderHtml": "TABLE OF CONTENTS",
+    "markdownAutoTOC.includeLevel": [
+        2,
+        4,
+        3
+    ],
+    "analyticsdx-vscode-core.CLI.checkForPlugin": false,
+    "apexPMD.pmdBinPath": "/Users/rsoesemann/dev/pmd-bin-7.0.0-rc4"
+}

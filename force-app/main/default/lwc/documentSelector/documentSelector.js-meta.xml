@@ -1,0 +1,9 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="documentAnalyzer">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>DMD - Document Checker</masterLabel>
+    <description>Start a DMD Document Analysis on files and attachments</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>

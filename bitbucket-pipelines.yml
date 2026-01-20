@@ -1,0 +1,78 @@
+# Bitbucket Pipelines configuration
+# For documentation please check: https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/
+image:
+    name: aquivalabs/bitbucketpipelines-sfdx:latest
+
+definitions:
+    scripts: # This section defines scripts that can be reused in more than one step, using YAML anchors
+        authToOrg: &authToOrg echo $TARGET_SFDX_AUTH_URL > ./TARGET_SFDX_AUTH_URL.txt && sfdx auth:sfdxurl:store --sfdxurlfile ./TARGET_SFDX_AUTH_URL.txt --setdefaultusername
+
+    steps:
+        - step: &getDependencies
+              name: Get Dependencies
+              caches:
+                  - node
+              script:
+                  - npm ci
+
+        - step: &scanPrettier
+              name: Prettier
+              caches:
+                  - node
+              script:
+                  - npx prettier force-app --check
+
+        - step: &sfdxScannerWithPmd
+              name: Salesforce Code Analyzer with PMD
+              script:
+                  - sfdx scanner:rule:add --path pmd/category/apex/custom.xml --language apex
+                  - sfdx scanner:rule:add --path pmd/category/xml/custom.xml --language xml
+                  - sfdx scanner:run --format table --target force-app --engine pmd --pmdconfig=pmd/ruleset.xml --severity-threshold 3
+
+        - step: &sfdxScannerRetireJs
+              name: Salesforce Code Analyzer RetireJS
+              script:
+                  - sfdx scanner:run --format table --target force-app --engine "retire-js"
+
+        - step: &sfdxScannerDfa
+              name: Salesforce Code Analyzer Graph Engine
+              script:
+                  # DFA performs a data-flow analysis, hence it needs the complete directory
+                  - sfdx scanner:run:dfa --format table --target force-app --projectdir force-app
+
+        - step: &sfdxScannerEslint
+              name: Salesforce Code Analyzer with ESLint
+              script:
+                  - sfdx scanner:run --format table -t force-app/lwc/**/*.js -e eslint --eslintconfig=.eslintrc.json --severity-threshold 3
+
+        - step: &uatValidation
+              name: Validating to UAT
+              script:
+                  - export TARGET_SFDX_AUTH_URL=$(eval echo \${UAT_SFDX_AUTH_URL})
+                  - *authToOrg
+                  - ./scripts/deploy.sh True
+
+        - step: &uatDeployment
+              name: Deploying to UAT
+              deployment: test
+              script:
+                  - export TARGET_SFDX_AUTH_URL=$(eval echo \${UAT_SFDX_AUTH_URL})
+                  - *authToOrg
+                  - ./scripts/deploy.sh False
+
+pipelines:
+    pull-requests:
+        '**': #this runs validation when opening a PR
+            - step: *getDependencies
+            - parallel:
+                  - step: *scanPrettier
+                  - step: *sfdxScannerWithPmd
+                  - step: *sfdxScannerDfa
+                  - step: *sfdxScannerEslint
+                  - step: *sfdxScannerRetireJs
+            - step: *uatValidation
+
+    branches:
+        develop:
+            - step: *getDependencies
+            - step: *uatDeployment

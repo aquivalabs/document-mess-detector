@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BenchmarkAnalysis__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Analysis cloned during regression test.</description>
+    <externalId>false</externalId>
+    <label>Benchmark Analysis</label>
+    <referenceTo>Analysis__c</referenceTo>
+    <relationshipLabel>Regression Tests</relationshipLabel>
+    <relationshipName>Regression_Tests</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

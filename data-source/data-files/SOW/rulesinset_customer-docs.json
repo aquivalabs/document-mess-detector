@@ -1,0 +1,64 @@
+{
+    "records": [
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_OB_Ref1" },
+            "Ruleset__c": "@Ruleset_SOW_Ref3",
+            "Rule__c": "@Rule_SOW_Ref1"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_OB_Ref2" },
+            "Ruleset__c": "@Ruleset_SOW_Ref3",
+            "Rule__c": "@Rule_SOW_Ref2"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_OB_Ref3" },
+            "Ruleset__c": "@Ruleset_SOW_Ref3",
+            "Rule__c": "@Rule_SOW_Ref3"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_OB_Ref5" },
+            "Ruleset__c": "@Ruleset_SOW_Ref3",
+            "Rule__c": "@Rule_SOW_Ref5"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_OB_Ref6" },
+            "Ruleset__c": "@Ruleset_SOW_Ref3",
+            "Rule__c": "@Rule_SOW_Ref6"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_OB_Ref7" },
+            "Ruleset__c": "@Ruleset_SOW_Ref3",
+            "Rule__c": "@Rule_SOW_Ref7"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_OB_Ref8" },
+            "Ruleset__c": "@Ruleset_SOW_Ref3",
+            "Rule__c": "@Rule_SOW_Ref8"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_OB_Ref9" },
+            "Ruleset__c": "@Ruleset_SOW_Ref3",
+            "Rule__c": "@Rule_SOW_Ref9"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_OB_Ref10" },
+            "Ruleset__c": "@Ruleset_SOW_Ref3",
+            "Rule__c": "@Rule_SOW_Ref13"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_OB_Ref11" },
+            "Ruleset__c": "@Ruleset_SOW_Ref3",
+            "Rule__c": "@Rule_SOW_Ref19"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_OB_Ref12" },
+            "Ruleset__c": "@Ruleset_SOW_Ref3",
+            "Rule__c": "@Rule_SOW_Ref23"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_SOW_OB_Ref13" },
+            "Ruleset__c": "@Ruleset_SOW_Ref3",
+            "Rule__c": "@Rule_SOW_Ref24"
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+See [Solution Design doc](/documentation/solution-design.md) for details.

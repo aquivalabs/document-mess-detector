@@ -1,0 +1,64 @@
+{
+    "records": [
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_NDA_Ref1" },
+            "Ruleset__c": "@Ruleset_NDA_Ref1",
+            "Rule__c": "@Rule_NDA_Ref1"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_NDA_Ref2" },
+            "Ruleset__c": "@Ruleset_NDA_Ref1",
+            "Rule__c": "@Rule_NDA_Ref2"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_NDA_Ref3" },
+            "Ruleset__c": "@Ruleset_NDA_Ref1",
+            "Rule__c": "@Rule_NDA_Ref3"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_NDA_Ref4" },
+            "Ruleset__c": "@Ruleset_NDA_Ref1",
+            "Rule__c": "@Rule_NDA_Ref4"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_NDA_Ref5" },
+            "Ruleset__c": "@Ruleset_NDA_Ref1",
+            "Rule__c": "@Rule_NDA_Ref5"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_NDA_Ref6" },
+            "Ruleset__c": "@Ruleset_NDA_Ref1",
+            "Rule__c": "@Rule_NDA_Ref6"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_NDA_Ref7" },
+            "Ruleset__c": "@Ruleset_NDA_Ref1",
+            "Rule__c": "@Rule_NDA_Ref7"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_NDA_Ref8" },
+            "Ruleset__c": "@Ruleset_NDA_Ref1",
+            "Rule__c": "@Rule_NDA_Ref8"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_NDA_Ref9" },
+            "Ruleset__c": "@Ruleset_NDA_Ref1",
+            "Rule__c": "@Rule_NDA_Ref9"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_NDA_Ref10" },
+            "Ruleset__c": "@Ruleset_NDA_Ref1",
+            "Rule__c": "@Rule_NDA_Ref10"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_NDA_Ref11" },
+            "Ruleset__c": "@Ruleset_NDA_Ref1",
+            "Rule__c": "@Rule_NDA_Ref11"
+        },
+        {
+            "attributes": { "type": "RuleInSet__c", "referenceId": "RuleInSet_NDA_Ref12" },
+            "Ruleset__c": "@Ruleset_NDA_Ref1",
+            "Rule__c": "@Rule_NDA_Ref12"
+        }
+    ]
+}

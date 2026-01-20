@@ -1,0 +1,52 @@
+{
+    "records": [
+        {
+            "attributes": { "type": "dmd_ai__Rule__c", "referenceId": "Rule_Ref1" },
+            "Name": "GENERAL - Spelling & Grammar",
+            "dmd_ai__Content__c": "Ensure that in document there are any errors in spelling and grammar.",
+            "dmd_ai__Description__c": "Correct spelling and grammar"
+        },
+        {
+            "attributes": { "type": "dmd_ai__Rule__c", "referenceId": "Rule_Ref2" },
+            "Name": "GENERAL - Clarity & Conciseness",
+            "dmd_ai__Content__c": "Ensure that information is written in a clear and concise manner for better understanding.",
+            "dmd_ai__Description__c": "Clear and concise writing"
+        },
+        {
+            "attributes": { "type": "dmd_ai__Rule__c", "referenceId": "Rule_Ref3" },
+            "Name": "GENERAL - Audience-Appropriate Tone",
+            "dmd_ai__Content__c": "Check if document follows a consistent tone and language that resonates with the target audience.",
+            "dmd_ai__Description__c": "Consistent tone and suitable language"
+        },
+        {
+            "attributes": { "type": "dmd_ai__Rule__c", "referenceId": "Rule_Ref4" },
+            "Name": "GENERAL - Proper Formatting",
+            "dmd_ai__Content__c": "Check if the document format properly and maintain a coherent structure throughout.",
+            "dmd_ai__Description__c": "Proper formatting and structure"
+        },
+        {
+            "attributes": { "type": "dmd_ai__Rule__c", "referenceId": "Rule_Ref5" },
+            "Name": "GENERAL - Company Branding Compliance",
+            "dmd_ai__Content__c": "Ensure that the document complies with company branding and style guidelines.",
+            "dmd_ai__Description__c": "Compliant with company branding and style"
+        },
+        {
+            "attributes": { "type": "dmd_ai__Rule__c", "referenceId": "Rule_Ref6" },
+            "Name": "GENERAL - Simplified Language",
+            "dmd_ai__Content__c": "Ensure that document is not using jargon, acronyms or technical terms without proper definitions or explanations.",
+            "dmd_ai__Description__c": "No jargon or unexplained technical terms"
+        },
+        {
+            "attributes": { "type": "dmd_ai__Rule__c", "referenceId": "Rule_Ref7" },
+            "Name": "GENERAL - Purpose & Clarity",
+            "dmd_ai__Content__c": "Review the document for clarity and verify it serves its intended purpose.",
+            "dmd_ai__Description__c": "Meeting the intended purpose and clear content"
+        },
+        {
+            "attributes": { "type": "dmd_ai__Rule__c", "referenceId": "Rule_Ref8" },
+            "Name": "GENERAL - Contradictory Information",
+            "dmd_ai__Content__c": "Ensure that document does not contains any contradictions within.",
+            "dmd_ai__Description__c": "No contradicting information"
+        }
+    ]
+}

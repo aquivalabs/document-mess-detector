@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ChatResponseNoMessage</fullName>
+        <categories>dmd, ai</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatResponseNoMessage</shortDescription>
+        <value>No message provided in generated response.</value>
+    </labels>
+    <labels>
+        <fullName>HttpRequestMissingParameter</fullName>
+        <categories>dmd, ai</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HttpRequestMissingParameter</shortDescription>
+        <value>Http request is missing some parameter. Verify required variables.</value>
+    </labels>
+    <labels>
+        <fullName>ChatCompletionRequestMissingBody</fullName>
+        <categories>dmd, ai</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatCompletionRequestMissingBody</shortDescription>
+        <value>Provide body for request to generate chat completion.</value>
+    </labels>
+    <labels>
+        <fullName>ErrorParsingResponseOpenAI</fullName>
+        <categories>dmd, ai</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatCompletionRequestMissingBody</shortDescription>
+        <value>Error parsing response from OpenAI: </value>
+    </labels>
+    <labels>
+        <fullName>ProcessingAnalysis</fullName>
+        <categories>dmd, appBuilder</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProcessingAnalysis</shortDescription>
+        <value>Your analysis has started and may take a few minutes. We'll notify you as soon as it's complete.</value>
+    </labels>
+    <labels>
+        <fullName>ProceedToResults</fullName>
+        <categories>dmd, flow</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProceedToResults</shortDescription>
+        <value>Please proceed to the 'Results' section to review your findings.</value>
+    </labels>
+    <labels>
+        <fullName>TryAgain</fullName>
+        <categories>dmd, flow</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TryAgain</shortDescription>
+        <value>Please try again later.</value>
+    </labels>
+    <labels>
+        <fullName>AIGeneratedContent</fullName>
+        <categories>Flexipage</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Content is AI generated</shortDescription>
+        <value>Please be aware that the information provided is AI-generated and should be independently verified before making any decisions based on it.</value>
+    </labels>
+    <labels>
+        <fullName>ResultsSummary</fullName>
+        <categories>Flexipage,lwc</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Results Summary</shortDescription>
+        <value>Results Summary</value>
+    </labels>
+    <labels>
+        <fullName>AnalysisHistory</fullName>
+        <categories>Flexipage</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Title for history analysis component</shortDescription>
+        <value>Document analysis history</value>
+    </labels>
+    <labels>
+        <fullName>DocumentWithoutAnalysisHistory</fullName>
+        <categories>Flexipage</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message if document have no analyses</shortDescription>
+        <value>No analyses for the selected document.</value>
+    </labels>
+    <labels>
+        <fullName>SectionStatus</fullName>
+        <categories>Flexipage, Section, Layout</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Section label - Status</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>SectionJustification</fullName>
+        <categories>Flexipage, Section, Layout</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Section label - Justification</shortDescription>
+        <value>Justification</value>
+    </labels>
+    <labels>
+        <fullName>SectionInformation</fullName>
+        <categories>Flexipage, Section, Layout</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Section label - Information</shortDescription>
+        <value>Information</value>
+    </labels>
+    <labels>
+        <fullName>SectionSystemInformation</fullName>
+        <categories>Flexipage, Section, Layout</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Section label - SystemInformation</shortDescription>
+        <value>System Information</value>
+    </labels>
+</CustomLabels>

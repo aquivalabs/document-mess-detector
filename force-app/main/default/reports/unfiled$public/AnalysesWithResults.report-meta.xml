@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Analysis__c$Name</field>
+    </columns>
+    <columns>
+        <field>Analysis__c.Results__r$Name</field>
+    </columns>
+    <columns>
+        <field>Analysis__c.Results__r$Status__c</field>
+    </columns>
+    <columns>
+        <field>Analysis__c.Results__r$Rule__c</field>
+    </columns>
+    <columns>
+        <field>Analysis__c.Results__r$Justification__c</field>
+    </columns>
+    <columns>
+        <field>Analysis__c.Results__r$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Analysis__c$Id</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Analyses with Results</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AnalysesWithResults__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Analysis__c$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Analysis__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,148 @@
+{
+    "records": [
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref1" },
+            "Name": "SOW - Net Terms or Payment Terms",
+            "Content__c": "Ensure that the \"Net Terms\" or \"Payment \" mentioned in the SOW (Statement of Work) are either 15 or 30.",
+            "Description__c": "Net Terms or Payment Terms should be 15 or 30"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref2" },
+            "Name": "SOW - Billing Milestones - initial payment",
+            "Content__c": "Ensure that Billing Milestones are present and that the initial payment upon SOW signature is at least 25%.",
+            "Description__c": "Verify Initial Payment"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref3" },
+            "Name": "SOW - Security Review dependency",
+            "Content__c": "Ensure that Billing Milestones are present and that billing is not affected by security review results.",
+            "Description__c": "Billing Milestones not contingent on Security Review"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref4" },
+            "Name": "SOW - Naming",
+            "Content__c": "Verify that the client's full legal name is used in the first sentence, referred to as 'Client' throughout the document, and that both the client and Aquiva are properly named in the authorization section.",
+            "Description__c": "Client and Aquiva naming"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref5" },
+            "Name": "SOW - Project Completion",
+            "Content__c": "Check if the 'Project Completion' section is filled in and does not mention 'passing security review'.",
+            "Description__c": "Project Completion Section Validation"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref6" },
+            "Name": "SOW - Description of Deliverables",
+            "Content__c": "Verify that the 'Description of Deliverables' section contains content.",
+            "Description__c": "Check Description of Deliverables Section"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref7" },
+            "Name": "SOW - Client Responsibilities",
+            "Content__c": "Verify that the 'Client Responsibilities' section have content.",
+            "Description__c": "Check Client Responsibilities section"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref8" },
+            "Name": "SOW - Aquiva Deliverables",
+            "Content__c": "Verify that the 'Aquiva Deliverables' section have content.",
+            "Description__c": "Check Aquiva Deliverables section"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref9" },
+            "Name": "SOW - Assumptions filled in",
+            "Content__c": "Ensure that the \"Assumptions\" section is always filled with content and includes the required \"Security Review assumption\" for PDO-specific documents.",
+            "Description__c": "Assumptions Section Check"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref10" },
+            "Name": "SOW - Assumption tools",
+            "Content__c": "Check if document includes the required assumptions regarding Aquiva's utilization of its Infrastructure, Tools, and Methodologies, and the right to replace personnel with resources of equal expertise.",
+            "Description__c": "Aquiva assumptions"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref11" },
+            "Name": "SOW - Assumptions for fixed fee",
+            "Content__c": "Does the Statement of Work (SOW) include the required assumption about the fixed fee for a fixed price project?",
+            "Description__c": "Assumption about the fixed fee"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref12" },
+            "Name": "SOW - Planned Start Date",
+            "Content__c": "The planned start date should be scheduled at least 14 days from the current date.",
+            "Description__c": "Planned Start Date not in 2 weeks."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref13" },
+            "Name": "SOW - No Renewal",
+            "Content__c": "Document should not contain any language related to renewals, such as automatic renewal clauses or renewal terms.",
+            "Description__c": "No renewal in document"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref14" },
+            "Name": "SOW - Net Terms or Payment Terms",
+            "Content__c": "Ensure that the Net Terms or Payment Terms specify a 30-day period if billing in advance.",
+            "Description__c": "Net Terms must be 30 if billing in advance "
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref15" },
+            "Name": "SOW - Pricing for PTO",
+            "Content__c": "Check the Pricing Section to ensure that the billing is always \"in advance\" when Paid Time Off (PTO) is included.",
+            "Description__c": "Pricing Section for Billing and PTO"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref16" },
+            "Name": "SOW - PTO pricing in advanced billing",
+            "Content__c": "Ensure that the following paragraph is included when addressing billing in advance (including PTO): \"For services billed in advance, the invoice will include the agreed-upon fees for the upcoming billing period, as well as any applicable charges for paid time off (PTO). The client is responsible for paying the invoice in full before the start of the billing period.\"",
+            "Description__c": "Pricing Section for Advance Billing with PTO inclusion"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref17" },
+            "Name": "SOW - Pricing Section for no PTO",
+            "Content__c": "Ensure that the billing is always in arrears when Paid Time Off (PTO) is NOT included.",
+            "Description__c": "Pricing Section when PTO not included"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref18" },
+            "Name": "SOW - Billing in advance for no PTO",
+            "Content__c": "Ensure that the paragraph includes information about billing in advance and does not mention Paid Time Off (PTO).",
+            "Description__c": "Pricing Section for for Advance Billing without PTO"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref19" },
+            "Name": "SOW - Cancellation Clause",
+            "Content__c": "Ensure that there are no specific cancellation terms mentioned.",
+            "Description__c": "No cancellation clause included."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref20" },
+            "Name": "SOW - Renewal Clause",
+            "Content__c": "Ensure that the section about renewal is present and contains text regarding automatic renewal and resource rate increase limits.",
+            "Description__c": "Renewal must be included."
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref21" },
+            "Name": "SOW - Capacity Based SOW Sections",
+            "Content__c": "\"Ensure that the document includes all listed sections:\n1. Name and Description of Project\n2. Description of Deliverables and Project Scope\n3. Pricing: Managed Services Delivery\n4. Terms of Engagement and Payment Schedule\n5. Project Start/Project  Schedule\n6. Renewal\n7.  Assumptions: \n8. Project Delays\n9. User Acceptance Testing (UAT)\"",
+            "Description__c": "Capacity based SOW sections inclusion"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref22" },
+            "Name": "SOW - Team resize",
+            "Content__c": "The document should contain a section that clearly states that either party can re-size the team with a 90 days notice and the changes are limited to 15% of the current team size or total monthly price.",
+            "Description__c": "Team changes"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref23" },
+            "Name": "SOW - Start date should not be defined",
+            "Content__c": "Ensure that in the document there is no specific planned start date.",
+            "Description__c": "No specific planned start date"
+        },
+        {
+            "attributes": { "type": "Rule__c", "referenceId": "Rule_SOW_Ref24" },
+            "Name": "SOW - Scope and Responsibilities",
+            "Content__c": "Verify that the 'Scope and Responsibilities' section contains content.",
+            "Description__c": "Check Scope and Responsibilities Section"
+        }
+    ]
+}

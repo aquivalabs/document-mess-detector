@@ -1,0 +1,26 @@
+[
+    {
+        "sobject": "dmd_ai__Ruleset__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+			"data-files/global/rulesets.json"
+		]
+    },
+    {
+        "sobject": "dmd_ai__Rule__c",
+        "saveRefs": true,
+        "resolveRefs": true,
+		"files": [
+			"data-files/global/rules.json"
+		]
+    },
+    {
+        "sobject": "dmd_ai__RuleInSet__c",
+        "saveRefs": false,
+        "resolveRefs": true,
+		"files": [
+			"data-files/global/rulesinset.json"
+		]
+    }
+]

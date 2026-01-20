@@ -1,0 +1,61 @@
+@startuml
+
+
+package "Data Model" {
+  class Analysis__c #lightgreen
+  class Result__c #lightblue {
+    Status__c : Picklist
+  }
+
+  class Rule__c #lightpink {
+    Name : String
+  }
+
+  Result__c -left-* Analysis__c : > Analysis__c
+  Result__c -right-* Rule__c : > Rule__c
+  RegressionTest__c --* Analysis__c : > BenchmarkAnalysis__c
+  Analysis__c --* RegressionTest__c : > RegressionTest__c
+}
+
+package "Data Example"  {
+
+  package "1 Benchmark Analysis"  {
+    class Analysis_0<Benchmark> #lightgreen
+    class Result_0_1<Benchmark>  #lightblue
+    class Result_0_2<Benchmark>  #lightblue
+  }
+
+  package "Rules" {
+    class Rule_1 #lightpink
+    class Rule_2 #lightpink
+  }
+
+  package "n Actual Analyses" {
+    class Analysis_1<Actual> #lightgreen
+    class Analysis_2<Actual> #lightgreen
+    class Result_1_1<Actual> #lightblue
+    class Result_1_2<Actual> #lightblue
+    class Result_2_1<Actual> #lightblue
+    class Result_2_2<Actual> #lightblue
+  }
+
+  Analysis_0 <-- Result_0_1 : MDR
+  Analysis_0 <-- Result_0_2 : MDR
+  Result_0_1 --> Rule_1 : LKP
+  Result_0_2 --> Rule_2 : LKP
+
+  RegressionTest -right-> Analysis_0 : LKP
+  RegressionTest  <-- Analysis_1 : LKP
+  Analysis_1 <-- Result_1_1 : MDR
+  Analysis_1 <-- Result_1_2 : MDR
+  Result_1_1 --> Rule_1 : LKP
+  Result_1_2 --> Rule_2 :LKP
+
+  RegressionTest  <-- Analysis_2 : LKP
+  Analysis_2 <-- Result_2_1 : MDR
+  Analysis_2 <-- Result_2_2 : MDR
+  Result_2_1 --> Rule_1 : LKP
+  Result_2_2 --> Rule_2 : LKP
+}
+
+@enduml
